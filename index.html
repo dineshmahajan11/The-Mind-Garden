@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-  
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet">
+
+      <!-- Bootstrap Icons CDN -->
+      <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
     /* Green overlay effect */
     .carousel-item {
       position: relative;
@@ -29,186 +39,276 @@
       color: #fff; /* white text */
       text-align: center;
     }
+
+    .link-success-hover:hover {
+  color: #198754 !important; /* Bootstrap green */
+}
+
   </style>
-</head>
-<body>
-<header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary py-4">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Pages
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Features</a></li>
-              <li><a class="dropdown-item" href="#">Our Team</a></li>
-              <li><a class="dropdown-item" href="#">Feedback Form</a></li>
-              <li><a class="dropdown-item" href="#">Reviews</a></li>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
+        <div class="container-fluid">
+          <!-- Logo -->
+          <a class="navbar-brand fw-bold fs-1 text-success" href="#">Navbar</a>
+
+          <!-- Toggler for mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Menu -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
+              <li class="nav-item">
+                <a class="nav-link active  fs-5 link-success"
+                  aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  fs-5 link-dark link-success-hover"
+                  href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  fs-5 link-dark link-success-hover"
+                  href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  fs-5 link-dark link-success-hover"
+                  href="projects.html">Projects</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle  fs-5 link-dark link-success-hover"
+                  href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Pages
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="features.html">Features</a></li>
+                  <li><a class="dropdown-item" href="ourteam.html">Our Team</a></li>
+                  <li><a class="dropdown-item" href="feedback.html">Feedback Form</a></li>
+                  <li><a class="dropdown-item" href="reviews.html">Reviews</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  fs-5 link-dark link-success-hover"
+                  href="contact.html">Contact</a>
+              </li>
             </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-
-  <!-- Slider start -->
-  <section>
-    <div id="carouselExampleDark" class="carousel carousel-dark slide">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      </div>
-      
-      <div class="carousel-inner">
-  <!-- Slide 1 -->
-<div class="carousel-item active" data-bs-interval="10000">
-  <img src="images/baner1.jpg" alt="Gardener Banner" class="w-100" style="height:500px; object-fit:cover;">
-  <div class="overlay"></div>
-  <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-    <h1 class="fw-bold mb-5">Make Your Home Like <br> Garden</h1>
-    <a href="#" class="btn btn-success btn-lg">Explore More</a>
-  </div>
-</div>
-
-<!-- Slide 2 -->
-<div class="carousel-item" data-bs-interval="2000">
-  <img src="images/baner2.jpg" alt="Gardener Banner" class="w-100" style="height:500px; object-fit:cover;">
-  <div class="overlay"></div>
-  <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-    <h1 class="fw-bold mb-5">Bring Nature Into <br> Your Life</h1>
-    <a href="#" class="btn btn-success btn-lg">Explore More</a>
-  </div>
-</div>
-
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </section>
-
-<main>
-  <section>
-    <div class="container text-center mt-5">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="shadow p-3  bg-body-tertiary rounded">
-            <h2>No Hidden Cost</h2>
-            <span>We believe in transparent pricing – what you see is what you pay, with no surprises.</span>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="shadow p-3  bg-body-tertiary rounded">
-            <h2>No Hidden Cost</h2>
-            <span>We believe in transparent pricing – what you see is what you pay, with no surprises.</span>
+      </nav>
+    </header>
+
+    <!-- Slider start -->
+    <section>
+      <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="images/baner1.jpg" alt="Gardener Banner" class="w-100"
+              style="height:600px; object-fit:cover;">
+            <div class="overlay"></div>
+            <div
+              class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+              <h1 class="fw-bold mb-5">Make Your Home Like <br> Garden</h1>
+              <a href="#" class="btn btn-success btn-lg">Explore More</a>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="images/baner2.jpg" alt="Gardener Banner" class="w-100"
+              style="height:600px; object-fit:cover;">
+            <div class="overlay"></div>
+            <div
+              class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+              <h1 class="fw-bold mb-5">Bring Nature Into <br> Your Life</h1>
+              <a href="#" class="btn btn-success btn-lg">Explore More</a>
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button"
+            data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button"
+            data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <main>
+        <section>
+          <div class="container text-center mt-5">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="shadow p-3  bg-body-tertiary rounded">
+                  <h2>No Hidden Cost</h2>
+                  <span>We believe in transparent pricing – what you see is what
+                    you pay, with no surprises.</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="shadow p-3  bg-body-tertiary rounded">
+                  <h2>No Hidden Cost</h2>
+                  <span>We believe in transparent pricing – what you see is what
+                    you pay, with no surprises.</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="shadow p-3  bg-body-tertiary rounded">
+                  <h2>No Hidden Cost</h2>
+                  <span>We believe in transparent pricing – what you see is what
+                    you pay, with no surprises.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-5">
+          <div class="container px-4">
+            <h2 class="mb-4">Our Services</h2>
+            <div class="row g-4">
+              <div class="col-md-4">
+                <img src="images/service-1.jpg" alt
+                  class="img-fluid rounded shadow">
+              </div>
+              <div class="col-md-4">
+                <img src="images/service-2.jpg" alt
+                  class="img-fluid rounded shadow">
+              </div>
+              <div class="col-md-4">
+                <img src="images/service-3.jpg" alt
+                  class="img-fluid rounded shadow">
+              </div>
+              <div class="col-md-4">
+                <img src="images/service-4.jpg" alt
+                  class="img-fluid rounded shadow">
+              </div>
+              <div class="col-md-4">
+                <img src="images/service-5.jpg" alt
+                  class="img-fluid rounded shadow">
+              </div>
+              <div class="col-md-4">
+                <img src="images/service-6.jpg" alt
+                  class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Footer Start -->
+      <footer class="text-white pt-5 pb-5" style="background-color:#0d3b2e;">
+        <div class="container mt-5 mb-5">
+          <div class="row">
+
+            <!-- Our Office -->
+            <div class="col-md-4 mb-4">
+              <h5 class="fw-bold mb-4">Our Office</h5>
+              <p><i class="fa fa-map-marker-alt me-2"></i>123 Pimpri, Pune,
+                India</p>
+              <p><i class="fa fa-phone-alt me-2"></i>+91 87345 67890</p>
+              <p><i class="fa fa-envelope me-2"></i>info@themindgarden.com</p>
+              <div class="d-flex gap-2">
+                <a href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"><i
+                    class="fab fa-twitter"></i></a>
+                <a href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"><i
+                    class="fab fa-facebook-f"></i></a>
+                <a href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"><i
+                    class="fab fa-youtube"></i></a>
+                <a href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"><i
+                    class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+
+            <!-- Services -->
+            <div class="col-md-4 mb-4">
+              <h5 class="fw-bold mb-4">Services</h5>
+              <ul class="list-unstyled">
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Landscaping</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Pruning
+                    Plants</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Irrigation & Drainage</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Garden
+                    Maintenance</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Green
+                    Technology</a></li>
+                    <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Urban Gardening
+</a></li>
+              </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-4">
+              <h5 class="fw-bold mb-4">Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">About</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Services</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Projects
+                    </a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Features</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Our Team</a></li>
+                    <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Feedback Form</a></li>
+                    <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Reviews</a></li>
+                    <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Contact US</a></li>
+              </ul>
+            </div>
+
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="shadow p-3  bg-body-tertiary rounded">
-            <h2>No Hidden Cost</h2>
-            <span>We believe in transparent pricing – what you see is what you pay, with no surprises.</span>
+
+        <!-- Bottom -->
+        <div class="py-3" style="background-color:#092b21;">
+          <div
+            class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <small>© The-Mind-Garden, All Right Reserved.</small>
+            <small>Designed By <a href="#"
+                class="text-success text-decoration-none">MAAD GROUP</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </footer>
+      <!-- Footer End -->
 
-<section class="py-5">
-  <div class="container px-4">
-    <h2 class="mb-4">Our Services</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <img src="images/service-1.jpg" alt="" class="img-fluid rounded shadow">
-      </div>
-      <div class="col-md-4">
-        <img src="images/service-2.jpg" alt="" class="img-fluid rounded shadow">
-      </div>
-      <div class="col-md-4">
-        <img src="images/service-3.jpg" alt="" class="img-fluid rounded shadow">
-      </div>
-      <div class="col-md-4">
-        <img src="images/service-4.jpg" alt="" class="img-fluid rounded shadow">
-      </div>
-      <div class="col-md-4">
-        <img src="images/service-5.jpg" alt="" class="img-fluid rounded shadow">
-      </div>
-      <div class="col-md-4">
-        <img src="images/service-6.jpg" alt="" class="img-fluid rounded shadow">
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer class="bg-dark text-light pt-5 pb-3">
-  <div class="container">
-    <div class="row">
-
-      <!-- Our Office -->
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold mb-3">Our Office</h5>
-        <p>123 kalewadi, Pune, India</p>
-        <p>+91 2345767890</p>
-        <p>info@themindgarden.com</p>
-      </div>
-
-      <!-- Services -->
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold mb-3">Services</h5>
-        <ul class="list-unstyled">
-          <li>Landscaping</li>
-          <li>Pruning Plants</li>
-          <li>Urban Gardening</li>
-          <li>Garden Maintenance</li>
-          <li>Green Technology</li>
-        </ul>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold mb-3">Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
-          <li><a href="#" class="text-light text-decoration-none">Contact Us</a></li>
-          <li><a href="#" class="text-light text-decoration-none">Services</a></li>
-          <li><a href="#" class="text-light text-decoration-none">Products</a></li>
-          <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
-        </ul>
-      </div>
-
-    </div>
-    <hr class="border-light">
-    <div class="row">
-      <div class="col-md-6 text-center text-md-start">
-        <p class="mb-0">© The Mind Garden, All Rights Reserved.</p>
-      </div>
-      <div class="col-md-6 text-center text-md-end">
-        <p class="mb-0">Designed by <a href="#" class="text-light text-decoration-none">MAAD Group</a></p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-</body>
-</html>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    </body>
+  </html>
