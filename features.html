@@ -20,6 +20,71 @@
       .link-success-hover:hover {
         color: #198754 !important; /* Bootstrap green */
       }
+
+      .page-header {
+  position: relative;
+  background: url('images/baner1.jpg') center center/cover no-repeat;
+  min-height: 300px; 
+}
+.page-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 128, 0, 0.35); /* lighter green overlay */
+  z-index: 1;
+}
+
+/* Text on top of overlay */
+.page-header .container {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+/* Breadcrumb separator change */
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  color: #fff;
+}
+
+.icon-circle {
+  width: 60px;              
+  height: 60px;        
+  background: rgba(0, 128, 0, 0.1); 
+  border-radius: 50%;      
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;         
+  color: #198754;          
+  flex-shrink: 0;         
+}
+
+.counter-section {
+  position: relative;
+  background: url('images/baner2.jpg') center center/cover no-repeat;
+  min-height: 300px;
+}
+
+.counter-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 128, 0, 0.6); /* green overlay */
+  z-index: 1;
+}
+
+.counter-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+
     </style>
   </head>
   <body>
@@ -65,10 +130,14 @@
                   Pages
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="features.html">Features</a></li>
-                  <li><a class="dropdown-item" href="ourteam.html">Our Team</a></li>
-                  <li><a class="dropdown-item" href="feedback.html">Feedback Form</a></li>
-                  <li><a class="dropdown-item" href="reviews.html">Reviews</a></li>
+                  <li><a class="dropdown-item"
+                      href="features.html">Features</a></li>
+                  <li><a class="dropdown-item" href="ourteam.html">Our
+                      Team</a></li>
+                  <li><a class="dropdown-item" href="feedback.html">Feedback
+                      Form</a></li>
+                  <li><a class="dropdown-item"
+                      href="reviews.html">Reviews</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -81,6 +150,105 @@
       </nav>
     </header>
     <!-- Header End -->
+
+    <!-- Header 2 Start -->
+
+    <main>
+      <section class="page-header d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container text-center py-5 position-relative">
+          <h1 class="display-3 text-white mb-4 fw-bold">Features</h1>
+          <nav aria-label="breadcrumb" class="animated slideInDown">
+            <ul class="breadcrumb justify-content-center mb-0">
+              <li class="breadcrumb-item"><a href="#"
+                  class="text-white text-decoration-none">Home</a></li>
+              <li class="breadcrumb-item"><a href="#"
+                  class="text-white text-decoration-none">Pages</a></li>
+              <li class="breadcrumb-item text-white active"
+                aria-current="page">Features</li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <!-- Header 2 End -->
+
+    <!-- Main Section Start -->
+
+          <main>
+ <section>
+  <div class="container py-5 text-center mt-5">
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="shadow p-4 bg-white rounded d-flex align-items-center">
+          <div class="icon-circle me-3">
+            <i class="bi bi-x-lg"></i>
+          </div>
+          <div class="text-start">
+            <h5 class="fw-bold text-success">No Hidden Cost</h5>
+            <p class="mb-0 text-muted">We believe in transparent pricing what you see is what you pay.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="shadow p-4 bg-white rounded d-flex align-items-center">
+          <div class="icon-circle me-3">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <div class="text-start">
+            <h5 class="fw-bold text-success">Dedicated Team</h5>
+            <p class="mb-0 text-muted">Our team is committed to providing you with top-notch service and support.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="shadow p-4 bg-white rounded d-flex align-items-center">
+          <div class="icon-circle me-3">
+            <i class="bi bi-telephone-fill"></i>
+          </div>
+          <div class="text-start">
+            <h5 class="fw-bold text-success">24/7 Available</h5>
+            <p class="mb-0 text-muted">We are always here to assist you, anytime and anywhere.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="counter-section text-white text-center mt-5">
+  <div class="overlay"></div>
+  <div class="container position-relative py-5">
+    <div class="row">
+      <div class="col-md-3">
+        <h2 class="fw-bold display-6">1234</h2>
+        <p>Happy Clients</p>
+      </div>
+      <div class="col-md-3">
+        <h2 class="fw-bold display-6">1234</h2>
+        <p>Garden Completed</p>
+      </div>
+      <div class="col-md-3">
+        <h2 class="fw-bold display-6">1234</h2>
+        <p>Dedicated Staff</p>
+      </div>
+      <div class="col-md-3">
+        <h2 class="fw-bold display-6">1234</h2>
+        <p>Awards Achieved</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+     <!-- Main Section End -->
 
     <h1>Feature Page</h1>
 
@@ -122,7 +290,8 @@
                   class="text-white text-decoration-none">Pruning
                   Plants</a></li>
               <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Irrigation & Drainage</a></li>
+                  class="text-white text-decoration-none">Irrigation &
+                  Drainage</a></li>
               <li><span class="text-success">›</span> <a href="#"
                   class="text-white text-decoration-none">Garden
                   Maintenance</a></li>
@@ -130,7 +299,8 @@
                   class="text-white text-decoration-none">Green
                   Technology</a></li>
               <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Urban Gardening</a></li>
+                  class="text-white text-decoration-none">Urban
+                  Gardening</a></li>
             </ul>
           </div>
 
