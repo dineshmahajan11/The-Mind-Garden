@@ -21,29 +21,34 @@
         color: #198754 !important; /* Bootstrap green */
       }
 
-      /* Hero Section */
-    .hero {
-      background: url('images/baner1.jpg') no-repeat center center/cover;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      color: white;
-      text-align: center;
-      position: relative;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 128, 0, 0.466); /* dark overlay */
-    }
-    .hero h1, .hero p {
-      position: relative;
-      z-index: 1;
-    }
+      .page-header {
+        position: relative;
+        background: url('images/baner1.jpg') center center/cover no-repeat;
+        min-height: 300px; 
+      }
+      .page-header .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0b3d2e;
+        opacity: 0.60; /* lighter green overlay */
+        z-index: 1;
+      }
+
+     /* Text on top of overlay */
+      .page-header .container {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+      }
+
+      /* Breadcrumb separator change */
+      .breadcrumb-item + .breadcrumb-item::before {
+        content: "/";
+        color: #fff;
+      }
   
    .service-box {
       background:#ffffff; 
@@ -198,353 +203,386 @@
   </head>
 
   <body style="background:white; color:#fff;">
-  <body>
+    <body>
 
-    <!-- Top Bar -->
-    <div style="background-color:#0b3d2e;" class="text-white py-3">
-      <div class="container d-flex justify-content-between align-items-center">
-        <!-- Left side: phone & email -->
-        <div>
-          <i class="bi bi-telephone me-2"></i> +91 87345 67890
-          <span class="ms-4"><i class="bi bi-envelope me-2"></i>
-            info@themindgarden.com</span>
-        </div>
+      <!-- Top Bar -->
+      <div style="background-color:#0b3d2e;" class="text-white py-3">
+        <div
+          class="container d-flex justify-content-between align-items-center">
+          <!-- Left side: phone & email -->
+          <div>
+            <i class="bi bi-telephone me-2"></i> +91 87345 67890
+            <span class="ms-4"><i class="bi bi-envelope me-2"></i>
+              info@themindgarden.com</span>
+          </div>
 
-        <!-- Right side: social icons -->
-        <div>
-          <span class="me-2">Follow Us:</span>
-          <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-white me-3"><i class="bi bi-youtube"></i></a>
-          <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Header Start -->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
-        <div class="container-fluid">
-          <!-- Logo -->
-          <a class="navbar-brand fw-bold fs-1 text-success" href="#">Navbar</a>
-
-          <!-- Toggler for mobile -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!-- Menu -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
-              <li class="nav-item">
-                <a class="nav-link active fs-5 link-success"
-                  aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
-                  href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
-                  href="services.html">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
-                  href="projects.html">Projects</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle fs-5 link-dark link-success-hover"
-                  href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Pages
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item"
-                      href="features.html">Features</a></li>
-                  <li><a class="dropdown-item" href="ourteam.html">Our
-                      Team</a></li>
-                  <li><a class="dropdown-item" href="feedback.html">Feedback
-                      Form</a></li>
-                  <li><a class="dropdown-item"
-                      href="reviews.html">Reviews</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
-                  href="contact.html">Contact</a>
-              </li>
-            </ul>
+          <!-- Right side: social icons -->
+          <div>
+            <span class="me-2">Follow Us:</span>
+            <a href="#" class="text-white me-3"><i
+                class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white me-3"><i
+                class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-3"><i
+                class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
-      </nav>
-    </header>
-    <!-- Header End -->
-
-  <!-- Hero Section -->
-
-  <section class="hero">
-    <h1 style="font-weight: bold;">Services</h1>
-    <p style="font-weight: normal;">Home /pages/ Services</p>
-  </section>
-
-  <!-- Services Heading -->
-
-   <section class="py-5 text-center">
-    <h5 style="color:#008000bd">Our Services </h5> 
-    <h1 style="color: #0b3d2e;"><b>Services That we <br>Offer For You</b> </h1>
-  </section>
-
-
-
-  <!-- Services Grid -->
-  <section class="container pb-5">
-    <div class="row g-4">
-
-
-      <!-- Service 1 -->
-      <div class="col-md-4">
-        <div class="service-box">
-        <div class="icon-wrapper">
-      <img src="images/icon-1.png" alt="Landscaping" class="service-icon" >
-    </div>
-          <h5>Landscaping</h5>
-          <p>
-            Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.
-          </p>
-    <!-- Button -->
-    <a class="btn btn-link text-success fw-bold p-0" data-bs-toggle="collapse" href="#service1" role="button">
-      +
-    </a>
-
-    <!-- Collapse content -->
-    <div class="collapse mt-2" id="service1">
-      <a href="#" class="btn btn-sm btn-success">Read More</a>
-  
-</div>
-      
-        </div>
       </div>
-      <!-- Add More Services Here -->
 
-      <!-- Service 2 -->
+      <!-- Header Start -->
+      <header>
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
+          <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold fs-1 text-success"
+              href="#">Navbar</a>
 
-    <div class="col-md-4">
-      <div class="service-box2">
-        <div class="icon-wrapper"></div>
-       <img src="images/icon-2.png" alt="Pruning Plants" class="service-icon" >
+            <!-- Toggler for mobile -->
+            <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <h5>Pruning plants</h5>
-        <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-      
-       <!-- Button -->
-    <a class="btn btn-link text-success fw-bold p-0" data-bs-toggle="collapse" href="#service1" role="button">
-           +
-    </a>
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
+                <li class="nav-item">
+                  <a class="nav-link active fs-5 link-success"
+                    aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5 link-dark link-success-hover"
+                    href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5 link-dark link-success-hover"
+                    href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5 link-dark link-success-hover"
+                    href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle fs-5 link-dark link-success-hover"
+                    href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Pages
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item"
+                        href="features.html">Features</a></li>
+                    <li><a class="dropdown-item" href="ourteam.html">Our
+                        Team</a></li>
+                    <li><a class="dropdown-item" href="feedback.html">Feedback
+                        Form</a></li>
+                    <li><a class="dropdown-item"
+                        href="reviews.html">Reviews</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5 link-dark link-success-hover"
+                    href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- Header End -->
 
-    <!-- Collapse content -->
-    <div class="collapse mt-2" id="service1">
-      <a href="#" class="btn btn-sm btn-success">Read More</a>
-  
-</div>
-</div>
-    </div>
+      <!-- Bottom Header -->
 
-    <!--Service 3-->
-    <div class="col-md-4">
-      <div class="service-box3">
-        <div class="icon-wrapper"></div>
-         <img src="images/icon-3.png" alt="Irrigation & Drainage" class="service-icon" >
-        <h5>Irrigation & Drainage</h5>
-        <p>
-          Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.
-        </p>
-            <!-- Button -->
-    <a class="btn btn-link text-success fw-bold p-0" data-bs-toggle="collapse" href="#service1" role="button">
-           +
-    </a>
+      <main>
+        <section class="page-header d-flex align-items-center">
+          <div class="overlay"></div>
+          <div class="container text-center py-5 position-relative">
+            <h1 class="display-3 text-white mb-4 fw-bold">Services</h1>
+            <nav aria-label="breadcrumb" class="animated slideInDown">
+              <ul class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="#"
+                    class="text-white text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item"><a href="#"
+                    class="text-white text-decoration-none">Pages</a></li>
+                <li class="breadcrumb-item text-white active"
+                  aria-current="page">Services</li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+      </main>
+      <!-- Bottom End -->
 
-    <!-- Collapse content -->
-    <div class="collapse mt-2" id="service1">
-      <a href="#" class="btn btn-sm btn-success">Read More</a>
-    </div>
-        
-      </div>
-    </div>
+      <!-- Services Heading -->
 
-    <!-- Service 4 -->
-      <div class="col-md-4">
-        <div class="service-box4">
-          <div class="icon mb-3"></div>
-           <div class="icon-wrapper"></div>
-            <img src="images/icon-4.png" alt="Garden Maintenance" class="service-icon" >
-          <h5>Garden Maintenance</h5>
-          <p>
-            Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.
-          </p>
+      <section class="py-5 text-center">
+        <h5 style="color:#008000bd">Our Services </h5>
+        <h1 style="color: #0b3d2e;"><b>Services That we <br>Offer For You</b>
+        </h1>
+      </section>
+
+      <!-- Services Grid -->
+      <section class="container pb-5">
+        <div class="row g-4">
+
+          <!-- Service 1 -->
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="icon-wrapper">
+                <img src="images/icon-1.png" alt="Landscaping"
+                  class="service-icon">
+              </div>
+              <h5>Landscaping</h5>
+              <p>
+                Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
+                sed diam stet diam sed stet.
+              </p>
               <!-- Button -->
-     <a class="btn btn-link text-success fw-bold p-0" data-bs-toggle="collapse" href="#service1" role="button">
-           +
-     </a>
+              <a class="btn btn-link text-success fw-bold p-0"
+                data-bs-toggle="collapse" href="#service1" role="button">
+                +
+              </a>
 
-    <!-- Collapse content -->
-    <div class="collapse mt-2" id="service1">
-      <a href="#" class="btn btn-sm btn-success">Read More</a>
-       </div>
-        </div>
-      </div>
+              <!-- Collapse content -->
+              <div class="collapse mt-2" id="service1">
+                <a href="#" class="btn btn-sm btn-success">Read More</a>
 
-       <!-- Service 5 -->
-      <div class="col-md-4">
-        <div class="service-box5">
-          <div class="icon mb-3"></div>
-          <div class="icon-wrapper"></div>
-            <img src="images/icon-5.png" alt="Green Technology" class="service-icon" >
-          <h5>Green Technology</h5>
-          <p>
-            Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.
-          </p>
+              </div>
+
+            </div>
+          </div>
+          <!-- Add More Services Here -->
+
+          <!-- Service 2 -->
+
+          <div class="col-md-4">
+            <div class="service-box2">
+              <div class="icon-wrapper"></div>
+              <img src="images/icon-2.png" alt="Pruning Plants"
+                class="service-icon">
+
+              <h5>Pruning plants</h5>
+              <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
+                sed diam stet diam sed stet.</p>
+
               <!-- Button -->
-    <a class="btn btn-link text-success fw-bold p-0" data-bs-toggle="collapse" href="#service1" role="button">
-           +
-    </a>
+              <a class="btn btn-link text-success fw-bold p-0"
+                data-bs-toggle="collapse" href="#service1" role="button">
+                +
+              </a>
 
-    <!-- Collapse content -->
-    <div class="collapse mt-2" id="service1">
-      <a href="#" class="btn btn-sm btn-success">Read More</a>
-    </div>
-        </div>
-      </div>
+              <!-- Collapse content -->
+              <div class="collapse mt-2" id="service1">
+                <a href="#" class="btn btn-sm btn-success">Read More</a>
 
-        <!-- Service 6 -->
-      <div class="col-md-4">
-        <div class="service-box6">
-          <div class="icon mb-3"></div>
-           <div class="icon-wrapper"></div>
-            <img src="images/icon-6.png" alt="Urban Gardening" class="service-icon" >
-          <h5>Urban Gardening</h5>
-          <p>
-            Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.
-          </p>
-              <!-- Button -->
-    <a class="btn btn-link text-success fw-bold p-0" data-bs-toggle="collapse" href="#service1" role="button">
-           +
-    </a>
-
-    <!-- Collapse content -->
-    <div class="collapse mt-2" id="service1">
-      <a href="#" class="btn btn-sm btn-success">Read More</a>
-    </div>
-        </div>
-    
-
-</div>
-
-    </div>
-  </section>
-
-      <!-- Footer Start -->
-    <footer class="text-white pt-5 pb-5" style="background-color:#0d3b2e;">
-      <div class="container mt-5 mb-5">
-        <div class="row">
-
-          <!-- Our Office -->
-          <div class="col-md-4 mb-4">
-            <h5 class="fw-bold mb-4">Our Office</h5>
-            <p><i class="fa fa-map-marker-alt me-2"></i>123 Pimpri, Pune,
-              India</p>
-            <p><i class="fa fa-phone-alt me-2"></i>+91 87345 67890</p>
-            <p><i class="fa fa-envelope me-2"></i>info@themindgarden.com</p>
-            <div class="d-flex gap-2">
-              <a href="#"
-                class="btn btn-outline-light btn-sm rounded-circle"><i
-                  class="fab fa-twitter"></i></a>
-              <a href="#"
-                class="btn btn-outline-light btn-sm rounded-circle"><i
-                  class="fab fa-facebook-f"></i></a>
-              <a href="#"
-                class="btn btn-outline-light btn-sm rounded-circle"><i
-                  class="fab fa-youtube"></i></a>
-              <a href="#"
-                class="btn btn-outline-light btn-sm rounded-circle"><i
-                  class="fab fa-instagram"></i></a>
+              </div>
             </div>
           </div>
 
-          <!-- Services -->
-          <div class="col-md-4 mb-4">
-            <h5 class="fw-bold mb-4">Services</h5>
-            <ul class="list-unstyled">
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Landscaping</a></li>
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Pruning
-                  Plants</a></li>
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Irrigation &
-                  Drainage</a></li>
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Garden
-                  Maintenance</a></li>
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Green
-                  Technology</a></li>
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Urban
-                  Gardening</a></li>
-            </ul>
+          <!--Service 3-->
+          <div class="col-md-4">
+            <div class="service-box3">
+              <div class="icon-wrapper"></div>
+              <img src="images/icon-3.png" alt="Irrigation & Drainage"
+                class="service-icon">
+              <h5>Irrigation & Drainage</h5>
+              <p>
+                Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
+                sed diam stet diam sed stet.
+              </p>
+              <!-- Button -->
+              <a class="btn btn-link text-success fw-bold p-0"
+                data-bs-toggle="collapse" href="#service1" role="button">
+                +
+              </a>
+
+              <!-- Collapse content -->
+              <div class="collapse mt-2" id="service1">
+                <a href="#" class="btn btn-sm btn-success">Read More</a>
+              </div>
+
+            </div>
           </div>
 
-          
-  
+          <!-- Service 4 -->
+          <div class="col-md-4">
+            <div class="service-box4">
+              <div class="icon mb-3"></div>
+              <div class="icon-wrapper"></div>
+              <img src="images/icon-4.png" alt="Garden Maintenance"
+                class="service-icon">
+              <h5>Garden Maintenance</h5>
+              <p>
+                Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
+                sed diam stet diam sed stet.
+              </p>
+              <!-- Button -->
+              <a class="btn btn-link text-success fw-bold p-0"
+                data-bs-toggle="collapse" href="#service1" role="button">
+                +
+              </a>
 
-          <!-- Quick Links -->
-          <div class="col-md-4 mb-4">
-            <h5 class="fw-bold mb-4">Quick Links</h5>
-            <ul class="list-unstyled">
-              <li><span class="text-success">›</span> <a href="about.html"
-                  class="text-white text-decoration-none">About</a></li>
-              <li><span class="text-success">›</span> <a href="services.html"
-                  class="text-white text-decoration-none">Services</a></li>
-              <li><span class="text-success">›</span> <a href="projects.html"
-                  class="text-white text-decoration-none">Projects</a></li>
-              <li><span class="text-success">›</span> <a href="features.html"
-                  class="text-white text-decoration-none">Features</a></li>
-              <li><span class="text-success">›</span> <a href="ourteam.html"
-                  class="text-white text-decoration-none">Our Team</a></li>
-              <li><span class="text-success">›</span> <a href="feedback.html"
-                  class="text-white text-decoration-none">Feedback Form</a></li>
-              <li><span class="text-success">›</span> <a href="reviews.html"
-                  class="text-white text-decoration-none">Reviews</a></li>
-              <li><span class="text-success">›</span> <a href="contact.html"
-                  class="text-white text-decoration-none">Contact US</a></li>
-            </ul>
+              <!-- Collapse content -->
+              <div class="collapse mt-2" id="service1">
+                <a href="#" class="btn btn-sm btn-success">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="col-md-4">
+            <div class="service-box5">
+              <div class="icon mb-3"></div>
+              <div class="icon-wrapper"></div>
+              <img src="images/icon-5.png" alt="Green Technology"
+                class="service-icon">
+              <h5>Green Technology</h5>
+              <p>
+                Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
+                sed diam stet diam sed stet.
+              </p>
+              <!-- Button -->
+              <a class="btn btn-link text-success fw-bold p-0"
+                data-bs-toggle="collapse" href="#service1" role="button">
+                +
+              </a>
+
+              <!-- Collapse content -->
+              <div class="collapse mt-2" id="service1">
+                <a href="#" class="btn btn-sm btn-success">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="col-md-4">
+            <div class="service-box6">
+              <div class="icon mb-3"></div>
+              <div class="icon-wrapper"></div>
+              <img src="images/icon-6.png" alt="Urban Gardening"
+                class="service-icon">
+              <h5>Urban Gardening</h5>
+              <p>
+                Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
+                sed diam stet diam sed stet.
+              </p>
+              <!-- Button -->
+              <a class="btn btn-link text-success fw-bold p-0"
+                data-bs-toggle="collapse" href="#service1" role="button">
+                +
+              </a>
+
+              <!-- Collapse content -->
+              <div class="collapse mt-2" id="service1">
+                <a href="#" class="btn btn-sm btn-success">Read More</a>
+              </div>
+            </div>
+
           </div>
 
         </div>
-      </div>
+      </section>
 
+      <!-- Footer Start -->
+      <footer class="text-white pt-5 pb-5" style="background-color:#0d3b2e;">
+        <div class="container mt-5 mb-5">
+          <div class="row">
 
-      <!-- Bottom -->
-      <div class="py-3" style="background-color:#092b21;">
-        <div
-          class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-          <small>© The-Mind-Garden, All Right Reserved.</small>
-          <small>Designed By <a href="#"
-              class="text-success text-decoration-none">MAAD GROUP</a></small>
+            <!-- Our Office -->
+            <div class="col-md-4 mb-4">
+              <h5 class="fw-bold mb-4">Our Office</h5>
+              <p><i class="fa fa-map-marker-alt me-2"></i>123 Pimpri, Pune,
+                India</p>
+              <p><i class="fa fa-phone-alt me-2"></i>+91 87345 67890</p>
+              <p><i class="fa fa-envelope me-2"></i>info@themindgarden.com</p>
+              <div class="d-flex gap-2">
+                <a href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"><i
+                    class="fab fa-twitter"></i></a>
+                <a href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"><i
+                    class="fab fa-facebook-f"></i></a>
+                <a href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"><i
+                    class="fab fa-youtube"></i></a>
+                <a href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"><i
+                    class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+
+            <!-- Services -->
+            <div class="col-md-4 mb-4">
+              <h5 class="fw-bold mb-4">Services</h5>
+              <ul class="list-unstyled">
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Landscaping</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Pruning
+                    Plants</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Irrigation &
+                    Drainage</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Garden
+                    Maintenance</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Green
+                    Technology</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Urban
+                    Gardening</a></li>
+              </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-4">
+              <h5 class="fw-bold mb-4">Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><span class="text-success">›</span> <a href="about.html"
+                    class="text-white text-decoration-none">About</a></li>
+                <li><span class="text-success">›</span> <a href="services.html"
+                    class="text-white text-decoration-none">Services</a></li>
+                <li><span class="text-success">›</span> <a href="projects.html"
+                    class="text-white text-decoration-none">Projects</a></li>
+                <li><span class="text-success">›</span> <a href="features.html"
+                    class="text-white text-decoration-none">Features</a></li>
+                <li><span class="text-success">›</span> <a href="ourteam.html"
+                    class="text-white text-decoration-none">Our Team</a></li>
+                <li><span class="text-success">›</span> <a href="feedback.html"
+                    class="text-white text-decoration-none">Feedback
+                    Form</a></li>
+                <li><span class="text-success">›</span> <a href="reviews.html"
+                    class="text-white text-decoration-none">Reviews</a></li>
+                <li><span class="text-success">›</span> <a href="contact.html"
+                    class="text-white text-decoration-none">Contact US</a></li>
+              </ul>
+            </div>
+
+          </div>
         </div>
-      </div>
 
-      
-    </footer>
-    <!-- Footer End -->
+        <!-- Bottom -->
+        <div class="py-3" style="background-color:#092b21;">
+          <div
+            class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <small>© The-Mind-Garden, All Right Reserved.</small>
+            <small>Designed By <a href="#"
+                class="text-success text-decoration-none">MAAD GROUP</a></small>
+          </div>
+        </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"></script>
-  </body>
-</html>
+      </footer>
+      <!-- Footer End -->
+
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    </body>
+  </html>
