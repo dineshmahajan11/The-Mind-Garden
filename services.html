@@ -121,8 +121,8 @@
     .service-icon {
       width: 60px;
       height: 60px;
-      margin-bottom: 10px; /* Space between icon and h5 */
-      position: relative; /* Needed for z-index */
+      margin-bottom: 10px;
+      position: relative; 
       z-index: 3;
       opacity: 1;
       transform: translateY(0);
@@ -134,38 +134,37 @@
       transform: translateY(-20px);
     }
 
-    /* Container for the + icon and Read More button */
     .toggle-container {
       position: absolute;
-      bottom: 30px; /* Position it correctly at the bottom */
+      bottom: 30px; 
       left: 50%;
-      transform: translateX(-50%) translateY(20px); /* Initially hide it below */
+      transform: translateX(-50%) translateY(20px); 
       opacity: 0;
       transition: opacity 0.4s, transform 0.4s;
       z-index: 3;
-      display: flex; /* Use flexbox to align + and button */
-      align-items: center; /* Vertically center them */
-      gap: 5px; /* Space between + and Read More */
-      white-space: nowrap; /* Prevent button from wrapping */
+      display: flex; 
+      align-items: center; 
+      gap: 5px; 
+      white-space: nowrap;
     }
 
     /* Show toggle container (with + and button) on hover */
     .service-box:hover .toggle-container {
       opacity: 1;
-      transform: translateX(-50%) translateY(0); /* Slide up to position */
+      transform: translateX(-50%) translateY(0); 
     }
 
     /* Style for the plus icon within the toggle container */
     .toggle-icon {
       font-size: 24px;
       font-weight: bold;
-      color: #198754; /* Green color for the plus */
+      color: #198754; 
     }
 
-    /* Style for the Read More button within the toggle container */
+    
     .toggle-container .btn-success {
-      font-size: 14px; /* Adjust font size if needed */
-      padding: 8px 15px; /* Adjust padding if needed */
+      font-size: 14px; 
+      padding: 8px 15px; 
     }
   </style>
 </head>
