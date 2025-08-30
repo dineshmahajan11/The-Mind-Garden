@@ -1,124 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - The Mind Garden</title>
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous">
+      rel="stylesheet" />
+
+    <!-- FontAwesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet">
-    <!-- Bootstrap Icons CDN -->
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
     <style>
       .link-success-hover:hover {
-        color: #198754 !important; /* Bootstrap green */
+        color: #198754 !important;
+      }
 
       /* Hero Section */
+      .page-header {
+        position: relative;
+        background: url("images/baner1.jpg") center center/cover no-repeat;
+        min-height: 300px;
       }
-    .hero{
-      background: url('images/baner1.jpg') no-repeat center center/cover;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      color: white;
-      text-align: center;
-      position: relative;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #0e523d73;
-    }
-    .hero h1, .hero p {
-      position: relative;
-      z-index: 1;
-    }
-   
-    
-    /* Overlay Effect */
-    .project-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-    .project-card img {
-      transition: transform 0.4s ease;
-    
-    }
-    .project-card:hover img {
-      transform: scale(1.1);
-    }
-    .project-card .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      opacity: 0;
-      transition: all 0.4s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .project-card:hover .overlay {
-      opacity: 1;
-    }
+      .page-header .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0b3d2e;
+        opacity: 0.6;
+        z-index: 1;
+      }
+      .page-header .container {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+      }
+      .breadcrumb-item + .breadcrumb-item::before {
+        content: "/";
+        color: #fff;
+      }
 
-  .container-fluid {
-  padding-left: 0;
-  padding-right: 0;
-  }
-  .nav-tabs {
-  background: #f5f5f5;   
-  border-radius: 6px;    
-  display: inline-flex;  
-}
-.nav-tabs .nav-link {
-  color: #333;
-  border: none;
+      /* Tabs */
+      .nav-tabs {
+        background: #f5f5f5;
+        border-radius: 6px;
+        display: inline-flex;
+      }
+      .nav-tabs .nav-link {
+        color: #333;
+        border: none;
+      }
+      .nav-tabs .nav-link.active {
+        border-bottom: 2px solid #28a745;
+        font-weight: 500;
+        background: transparent;
+        color: #000;
+      }
 
-}
-.nav-tabs .nav-link.active {
-  border-bottom: 2px solid #28a745; 
-  font-weight: 300;
-  background: transparent;
-  color: #000;
+      /* Footer */
+      .prj-footer {
+        background-color: #0d3b2e;
+      }
+      .prj-footer-bottom {
+        background-color: #092b21;
+      }
 
-}
+      /* Project Hover Effect */
+      .project-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.5rem;
+      }
 
-.projects-section{
-  margin-top:20px;
-  padding-top: 10px;
-}
+      .project-item img {
+        transition: transform 0.6s ease;
+        display: block;
+        width: 100%;
+      }
 
-.projects-section.row{
-  margin-top: 10px;
-}
+      .project-item:hover img {
+        transform: scale(1.1);
+      }
+
+      /* Overlay left & right */
+      .project-item::before,
+      .project-item::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background: #0b3d2e;
+        opacity: 0.60;
+        transition: all 0.6s ease;
+        z-index: 1;
+      }
+
+      .project-item::before {
+        left: -50%;
+      }
+      .project-item::after {
+        right: -50%;
+      }
+
+      .project-item:hover::before {
+        left: 0;
+      }
+      .project-item:hover::after {
+        right: 0;
+      }
+
+      /* Center Text - hidden by default */
+      .project-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 1.50rem;
+        font-weight: 700;
+        z-index: 2;
+        text-align: center;
+        white-space: nowrap;
+        opacity: 0;                 /* hidden initially */
+        transition: opacity 0.4s ease;
+      }
+
+      .project-item:hover .project-title {
+        opacity: 1;                 /* visible on hover */
+      }
+
     </style>
   </head>
   <body>
     <!-- Top Bar -->
-    <div style="background-color:#0b3d2e;" class="text-white py-3">
+    <div class="text-white py-3" style="background-color:#0b3d2e;">
       <div class="container d-flex justify-content-between align-items-center">
-        <!-- Left side: phone & email -->
         <div>
           <i class="bi bi-telephone me-2"></i> +91 87345 67890
           <span class="ms-4"><i class="bi bi-envelope me-2"></i>
             info@themindgarden.com</span>
         </div>
-
-        <!-- Right side: social icons -->
         <div>
           <span class="me-2">Follow Us:</span>
           <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
@@ -128,47 +161,35 @@
         </div>
       </div>
     </div>
+
     <!-- Header Start -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
         <div class="container-fluid">
-          <!-- Logo -->
-          <a class="navbar-brand fw-bold fs-1 text-success" href="#">Navbar</a>
-
-          <!-- Toggler for mobile -->
+          <a class="navbar-brand fw-bold fs-1 text-success" href="index.html">
+            Navbar
+          </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+            data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
           </button>
-
-          <!-- Menu -->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
-              <li class="nav-item">
-                <a class="nav-link active fs-5 link-success"
-                  aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
-                  href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
-                  href="services.html">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
-                  href="projects.html">Projects</a>
-              </li>
+              <li class="nav-item"><a class="nav-link active fs-5 link-success"
+                  href="index.html">Home</a></li>
+              <li class="nav-item"><a
+                  class="nav-link fs-5 link-dark link-success-hover"
+                  href="about.html">About</a></li>
+              <li class="nav-item"><a
+                  class="nav-link fs-5 link-dark link-success-hover"
+                  href="services.html">Services</a></li>
+              <li class="nav-item"><a
+                  class="nav-link fs-5 link-dark link-success-hover"
+                  href="projects.html">Projects</a></li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle fs-5 link-dark link-success-hover"
-                  href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Pages
-                </a>
+                  href="#" data-bs-toggle="dropdown">Pages</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item"
                       href="features.html">Features</a></li>
@@ -180,10 +201,9 @@
                       href="reviews.html">Reviews</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
-                  href="contact.html">Contact</a>
-              </li>
+              <li class="nav-item"><a
+                  class="nav-link fs-5 link-dark link-success-hover"
+                  href="contact.html">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -192,107 +212,150 @@
     <!-- Header End -->
 
     <!-- Hero Section -->
-
-  <section class="hero">
-    <h1 style="font-weight: bold;">Projects</h1>
-    <p style="font-weight: normal;">Home /pages/ Projects</p>
-  </section>
-
-  <!-- Services Heading -->
-   <section class="py-5 text-center">
-    <h5 style="color:#008000bd">Our Projects </h5> 
-    <h1 style="color: #0b3d2e;"><b> Some Of Our<br>Wonderful Projects</b> </h1>
-  </section>
-
-  <!-- All Projects -->
-
-  <div class="d-flex justify-content-center mb-4">
-  <ul class="nav nav-tabs justify-content-center border-0 mb-4">
-  <li class="nav-item">
-      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">
-      All
-    </button>
-  </li>
-  <li class="nav-item">
-    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#complete" type="button" role="tab">
-      Complete Projects
-    </button>
-  </li>
-  <li class="nav-item">
-    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ongoing" type="button" role="tab">
-      Ongoing Projects
-    </button>
-  </li>
-</ul>
-</div>
-  
-   <!-- Tab Content Start -->
-<div class="container my-5">
-  <div class="tab-content">
-
-    <!-- All Projects -->
-    <div class="tab-pane fade show active" id="all" role="tabpanel">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <img src="images/service-1.jpg" class="img-fluid rounded-3 shadow-sm">
+    <main>
+      <section class="page-header d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container text-center py-5 position-relative">
+          <h1 class="display-3 text-white mb-4 fw-bold">Projects</h1>
+          <nav aria-label="breadcrumb"
+            class="animate__animated animate__slideInDown">
+            <ul class="breadcrumb justify-content-center mb-0">
+              <li class="breadcrumb-item"><a href="index.html"
+                  class="text-white text-decoration-none">Home</a></li>
+              <li class="breadcrumb-item"><a href="#"
+                  class="text-white text-decoration-none">Pages</a></li>
+              <li class="breadcrumb-item text-white active">Projects</li>
+            </ul>
+          </nav>
         </div>
-        <div class="col-md-4">
-          <img src="images/service-2.jpg" class="img-fluid rounded-3 shadow-sm">
+      </section>
+    </main>
+
+    <!-- Projects Intro -->
+    <section class="py-5 text-center mt-5">
+      <h5 class="mb-3 fs-3 text-success">Our Projects</h5>
+      <h1 style="color: #0b3d2e;"><b>Some Of Our <br> Wonderful
+          Projects</b></h1>
+    </section>
+
+    <!-- Project Tabs -->
+    <div class="d-flex justify-content-center mb-4">
+      <ul class="nav nav-tabs justify-content-center border-0 mb-4">
+        <li class="nav-item"><button class="nav-link active"
+            data-bs-toggle="tab" data-bs-target="#all">All</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+            data-bs-target="#complete">Complete Projects</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+            data-bs-target="#ongoing">Ongoing Projects</button></li>
+      </ul>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="container my-5">
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="all">
+          <div class="row g-4">
+
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-1.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Landscaping</h4>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-2.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Pruning plants</h4>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-3.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Irrigation & Drainage</h4>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-4.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Garden Maintenance</h4>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-5.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Green Technology</h4>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-6.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Urban Gardening</h4>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div class="col-md-4">
-          <img src="images/service-3.jpg" class="img-fluid rounded-3 shadow-sm">
+        <div class="tab-pane fade" id="complete">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-1.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Landscaping</h4>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-3.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Irrigation & Drainage</h4>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-5.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Green Technology</h4>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-4">
-          <img src="images/service-4.jpg" class="img-fluid rounded-3 shadow-sm">
-        </div>
-        <div class="col-md-4">
-          <img src="images/service-5.jpg" class="img-fluid rounded-3 shadow-sm">
-        </div>
-        <div class="col-md-4">
-          <img src="images/service-6.jpg" class="img-fluid rounded-3 shadow-sm">
+        <div class="tab-pane fade" id="ongoing">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-2.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Pruning plants</h4>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-4.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Garden Maintenance</h4>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="project-item shadow-sm">
+                <img src="images/service-6.jpg" class="img-fluid rounded-3">
+                <h4 class="project-title">Urban Gardening</h4>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Complete Projects -->
-    <div class="tab-pane fade" id="complete" role="tabpanel">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <img src="images/service-1.jpg" class="img-fluid rounded-3 shadow-sm">
-        </div>
-        <div class="col-md-4">
-          <img src="images/service-3.jpg" class="img-fluid rounded-3 shadow-sm">
-        </div>
-        <div class="col-md-4">
-          <img src="images/service-5.jpg" class="img-fluid rounded-3 shadow-sm">
-        </div>
-      </div>
-    </div>
-
-    <!-- Ongoing Projects -->
-    <div class="tab-pane fade" id="ongoing" role="tabpanel">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <img src="images/service-2.jpg" class="img-fluid rounded-3 shadow-sm">
-        </div>
-        <div class="col-md-4">
-          <img src="images/service-4.jpg" class="img-fluid rounded-3 shadow-sm">
-        </div>
-        <div class="col-md-4">
-          <img src="images/service-6.jpg" class="img-fluid rounded-3 shadow-sm">
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-<!-- Tab Content End -->
-    <!-- Footer Start -->
-    <footer class="text-white pt-5 pb-5" style="background-color:#0d3b2e;">
+    <!-- Footer -->
+    <footer class="text-white pt-5 pb-5 prj-footer ">
       <div class="container mt-5 mb-5">
         <div class="row">
-
-          <!-- Our Office -->
           <div class="col-md-4 mb-4">
             <h5 class="fw-bold mb-4">Our Office</h5>
             <p><i class="fa fa-map-marker-alt me-2"></i>123 Pimpri, Pune,
@@ -300,85 +363,62 @@
             <p><i class="fa fa-phone-alt me-2"></i>+91 87345 67890</p>
             <p><i class="fa fa-envelope me-2"></i>info@themindgarden.com</p>
             <div class="d-flex gap-2">
-              <a href="#"
-                class="btn btn-outline-light btn-sm rounded-circle"><i
+              <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
                   class="fab fa-twitter"></i></a>
-              <a href="#"
-                class="btn btn-outline-light btn-sm rounded-circle"><i
+              <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
                   class="fab fa-facebook-f"></i></a>
-              <a href="#"
-                class="btn btn-outline-light btn-sm rounded-circle"><i
+              <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
                   class="fab fa-youtube"></i></a>
-              <a href="#"
-                class="btn btn-outline-light btn-sm rounded-circle"><i
+              <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
                   class="fab fa-instagram"></i></a>
             </div>
           </div>
-
-          <!-- Services -->
           <div class="col-md-4 mb-4">
             <h5 class="fw-bold mb-4">Services</h5>
             <ul class="list-unstyled">
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Landscaping</a></li>
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Pruning
-                  Plants</a></li>
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Irrigation &
-                  Drainage</a></li>
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Garden
-                  Maintenance</a></li>
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Green
-                  Technology</a></li>
-              <li><span class="text-success">›</span> <a href="#"
-                  class="text-white text-decoration-none">Urban
-                  Gardening</a></li>
+              <li><span class="text-success">›</span> Landscaping</li>
+              <li><span class="text-success">›</span> Pruning Plants</li>
+              <li><span class="text-success">›</span> Irrigation & Drainage</li>
+              <li><span class="text-success">›</span> Garden Maintenance</li>
+              <li><span class="text-success">›</span> Green Technology</li>
+              <li><span class="text-success">›</span> Urban Gardening</li>
             </ul>
           </div>
-          <!-- Quick Links -->
           <div class="col-md-4 mb-4">
             <h5 class="fw-bold mb-4">Quick Links</h5>
             <ul class="list-unstyled">
               <li><span class="text-success">›</span> <a href="about.html"
-                  class="text-white text-decoration-none">About</a></li>
+                  class="text-white">About</a></li>
               <li><span class="text-success">›</span> <a href="services.html"
-                  class="text-white text-decoration-none">Services</a></li>
+                  class="text-white">Services</a></li>
               <li><span class="text-success">›</span> <a href="projects.html"
-                  class="text-white text-decoration-none">Projects</a></li>
+                  class="text-white">Projects</a></li>
               <li><span class="text-success">›</span> <a href="features.html"
-                  class="text-white text-decoration-none">Features</a></li>
+                  class="text-white">Features</a></li>
               <li><span class="text-success">›</span> <a href="ourteam.html"
-                  class="text-white text-decoration-none">Our Team</a></li>
+                  class="text-white">Our Team</a></li>
               <li><span class="text-success">›</span> <a href="feedback.html"
-                  class="text-white text-decoration-none">Feedback Form</a></li>
+                  class="text-white">Feedback</a></li>
               <li><span class="text-success">›</span> <a href="reviews.html"
-                  class="text-white text-decoration-none">Reviews</a></li>
+                  class="text-white">Reviews</a></li>
               <li><span class="text-success">›</span> <a href="contact.html"
-                  class="text-white text-decoration-none">Contact US</a></li>
+                  class="text-white">Contact</a></li>
             </ul>
           </div>
         </div>
       </div>
-      <!-- Bottom -->
-      <div class="py-3" style="background-color:#092b21;">
+      <div class="py-3 prj-footer-bottom">
         <div
           class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
           <small>© The-Mind-Garden, All Right Reserved.</small>
-          <small>Designed By <a href="#"
-              class="text-success text-decoration-none">MAAD GROUP</a></small>
+          <small>Designed By <a href="#" class="text-success">MAAD
+              GROUP</a></small>
         </div>
       </div>
     </footer>
-    <!-- Footer End -->
 
+    <!-- Bootstrap JS -->
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous">
-    </script>
-
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
