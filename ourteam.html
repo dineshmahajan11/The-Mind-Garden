@@ -20,9 +20,189 @@
       .link-success-hover:hover {
         color: #198754 !important; /* Bootstrap green */
       }
+
+      .page-header {
+        position: relative;
+        background: url('images/baner1.jpg') center center/cover no-repeat;
+        min-height: 300px; 
+      }
+      .page-header .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0b3d2e;
+        opacity: 0.60; /* lighter green overlay */
+        z-index: 1;
+      }
+
+     /* Text on top of overlay */
+      .page-header .container {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+      }
+    /* Team Image Styling */
+     .team-item img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #dbeedb;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+   .team-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/*** Team ***/
+.team-item {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Square image container with soft border and shadow */
+.team-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Image fills square and zooms on hover */
+.team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 !important;
+    transition: transform 0.5s ease;
+}
+
+.team-item:hover .team-img img {
+    transform: scale(1.05);
+}
+
+/* Text overlay styling */
+.team-item .team-text {
+    position: absolute;
+    width: calc(100% - 45px);
+    left: -100%;
+    bottom: 45px;
+    padding: 1.5rem;
+    background: #FFFFFF;
+    border-radius: 0 4px 4px 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.team-item:hover .team-text {
+    left: 0;
+    opacity: 1;
+}
+
+/* Social icon buttons */
+.team-item .team-social .btn {
+    background: var(--light);
+    color: var(--primary);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, color 0.3s;
+}
+
+.team-item .team-social .btn:hover {
+    background: var(--primary);
+    color: var(--light);
+}
+
+/* Social icon container on image */
+.team-item .team-img .team-social {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    z-index: 3;
+    opacity: 0;
+}
+
+.team-item:hover .team-img .team-social {
+    transition-delay: 0.3s;
+    opacity: 1;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation arrows */
+.testimonial-carousel .owl-nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    margin-right: 15px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    background: var(--light);
+    border-radius: 4px;
+    font-size: 22px;
+    transition: 0.5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    background: var(--primary);
+    color: var(--light);
+}
+
+
+
+
     </style>
   </head>
   <body>
+    <!-- Top Bar -->
+    <div style="background-color:#0b3d2e;" class="text-white py-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <!-- Left side: phone & email -->
+        <div>
+          <i class="bi bi-telephone me-2"></i> +91 87345 67890
+          <span class="ms-4"><i class="bi bi-envelope me-2"></i>
+            info@themindgarden.com</span>
+        </div>
+
+        <!-- Right side: social icons -->
+        <div>
+          <span class="me-2">Follow Us:</span>
+          <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
     <!-- Header Start -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
@@ -85,29 +265,97 @@
       </nav>
     </header>
 
-    <!-- Top Bar -->
-    <div style="background-color:#0b3d2e;" class="text-white py-3">
-      <div class="container d-flex justify-content-between align-items-center">
-        <!-- Left side: phone & email -->
-        <div>
-          <i class="bi bi-telephone me-2"></i> +91 87345 67890
-          <span class="ms-4"><i class="bi bi-envelope me-2"></i>
-            info@themindgarden.com</span>
-        </div>
-
-        <!-- Right side: social icons -->
-        <div>
-          <span class="me-2">Follow Us:</span>
-          <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-white me-3"><i class="bi bi-youtube"></i></a>
-          <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
-        </div>
-      </div>
-    </div>
     <!-- Header End -->
+     
 
-    <h1>Our Team</h1>
+      <!-- Bottom Header -->
+
+      <main>
+        <section class="page-header d-flex align-items-center">
+          <div class="overlay"></div>
+          <div class="container text-center py-5 position-relative">
+            <h1 class="display-3 text-white mb-4 fw-bold">Our Team</h1>
+            <nav aria-label="breadcrumb" class="animated slideInDown">
+              <ul class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="#"
+                    class="text-white text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item"><a href="#"
+                    class="text-white text-decoration-none">Pages</a></li>
+                <li class="breadcrumb-item text-white active"
+                  aria-current="page">Services</li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+      </main>
+      <!-- Bottom End -->
+
+       <!-- OurTeam Heading -->
+
+      <section class="py-5 text-center">
+        <h5 style="color:#008000bd">Our Team </h5>
+        <h1 style="color: #0b3d2e;"><b>Dedicated & <br>Experienced Team <br>Members</b>
+        </h1>
+      </section>
+      <!-- Team Start -->
+<div class="container py-5">
+    <div class="row g-4">
+        <!-- Team Member 1 -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item rounded">
+                <div class="team-img">
+                    <img src="images/team-1.jpg" alt="Doris Jordan">
+                </div>
+                <div class="team-text">
+                    <h4 class="mb-0">Doris Jordan</h4>
+                    <p class="text-primary">Landscape Designer</p>
+                    <div class="team-social d-flex justify-content-center">
+                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="team-item rounded">
+                <div class="team-img">
+                    <img src="images/team-2.jpg" alt="Johnny Ramirez">
+                </div>
+                <div class="team-text">
+                    <h4 class="mb-0">Johnny Ramirez</h4>
+                    <p class="text-primary">Garden Designer</p>
+                    <div class="team-social d-flex justify-content-center">
+                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="team-item rounded">
+                <div class="team-img">
+                    <img src="images/team-3.jpg" alt="Diana Wagner">
+                </div>
+                <div class="team-text">
+                    <h4 class="mb-0">Diana Wagner</h4>
+                    <p class="text-primary">Senior Gardener</p>
+                    <div class="team-social d-flex justify-content-center">
+                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->
 
     <!-- Footer Start -->
     <footer class="text-white pt-5 pb-5" style="background-color:#0d3b2e;">
