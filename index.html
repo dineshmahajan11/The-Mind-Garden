@@ -41,8 +41,165 @@
       text-align: center;
     }
     .link-success-hover:hover {
-  color: #198754 !important; /* Bootstrap green */
+      color: #198754 !important; /* Bootstrap green */
+    }
+    .icon-circle {
+     width: 60px;              
+     height: 60px;        
+     background: rgba(0, 128, 0, 0.1); 
+     border-radius: 50%;      
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 26px;         
+     color: #198754;          
+     flex-shrink: 0;         
+    }
+
+  .counter-section {
+  position: relative;
+  background: url('images/baner2.jpg') center center/cover no-repeat;
+  min-height: 300px;
 }
+
+.counter-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:#0b3d2e;
+  opacity: 0.60; /* lighter green overlay */ 
+  z-index: 1;
+}
+
+.counter-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+    /* Base styles for all service boxes */
+    .service-box {
+      background: #ffffff;
+      color: #0b3d2e;
+      border-radius: 10px;
+      padding: 30px;
+      height: 300px;
+      text-align: center;
+      transition: 0.4s;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #dee2e6;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .service-box h5 {
+      margin-top: 15px;
+      font-weight: 600;
+    }
+    .service-box p {
+      margin-bottom: 30px; /* Adds space between text and toggle/button area */
+    }
+
+    /* Pseudo-element for the dark overlay on hover */
+    .service-box::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(11, 61, 46, 0.6);
+      opacity: 0;
+      transition: opacity 0.4s;
+      z-index: 2;
+    }
+
+    /* Base hover effects for all boxes */
+    .service-box:hover {
+      color: #fff;
+      transform: translateY(-5px);
+    }
+    .service-box:hover::after {
+      opacity: 1;
+    }
+
+    /* Unique background images for each hover state */
+    .landscaping-hover:hover {
+      background: url("images/service-1.jpg") center/cover no-repeat;
+    }
+    .pruning-hover:hover {
+      background: url("images/service-2.jpg") center/cover no-repeat;
+    }
+    .irrigation-hover:hover {
+      background: url("images/service-3.jpg") center/cover no-repeat;
+    }
+    .maintenance-hover:hover {
+      background: url("images/service-4.jpg") center/cover no-repeat;
+    }
+    .technology-hover:hover {
+      background: url("images/service-5.jpg") center/cover no-repeat;
+    }
+    .gardening-hover:hover {
+      background: url("images/service-6.jpg") center/cover no-repeat;
+    }
+
+    /* Ensure content stays on top of the overlay */
+    .service-box h5,
+    .service-box p {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Service icon (the small image) */
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+      position: relative; 
+      z-index: 3;
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.4s, transform 0.4s;
+    }
+    /* Hide service icon on hover */
+    .service-box:hover .service-icon {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    .toggle-container {
+      position: absolute;
+      bottom: 30px; 
+      left: 50%;
+      transform: translateX(-50%) translateY(20px); 
+      opacity: 0;
+      transition: opacity 0.4s, transform 0.4s;
+      z-index: 3;
+      display: flex; 
+      align-items: center; 
+      gap: 5px; 
+      white-space: nowrap;
+    }
+
+    /* Show toggle container (with + and button) on hover */
+    .service-box:hover .toggle-container {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0); 
+    }
+
+    /* Style for the plus icon within the toggle container */
+    .toggle-icon {
+      font-size: 24px;
+      font-weight: bold;
+      color: #198754; 
+    }
+
+    
+    .toggle-container .btn-success {
+      font-size: 14px; 
+      padding: 8px 15px; 
+    }
+
 
   </style>
   </head>
@@ -183,64 +340,309 @@
 
       <main>
         <section>
-          <div class="container text-center mt-5">
-            <div class="row">
+          <div class="container py-5 text-center mt-5">
+            <div class="row g-4">
+              <!-- Card 1 -->
               <div class="col-md-4">
-                <div class="shadow p-3  bg-body-tertiary rounded">
-                  <h2>No Hidden Cost</h2>
-                  <span>We believe in transparent pricing – what you see is what
-                    you pay, with no surprises.</span>
+                <div
+                  class="shadow p-4 bg-white rounded d-flex align-items-center">
+                  <div class="icon-circle me-3">
+                    <i class="bi bi-x-lg"></i>
+                  </div>
+                  <div class="text-start">
+                    <h5 class="fw-bold text-success">No Hidden Cost</h5>
+                    <p class="mb-0 text-muted">We believe in transparent pricing
+                      what you see is what you pay.</p>
+                  </div>
                 </div>
               </div>
+
+              <!-- Card 2 -->
               <div class="col-md-4">
-                <div class="shadow p-3  bg-body-tertiary rounded">
-                  <h2>No Hidden Cost</h2>
-                  <span>We believe in transparent pricing – what you see is what
-                    you pay, with no surprises.</span>
+                <div
+                  class="shadow p-4 bg-white rounded d-flex align-items-center">
+                  <div class="icon-circle me-3">
+                    <i class="bi bi-people-fill"></i>
+                  </div>
+                  <div class="text-start">
+                    <h5 class="fw-bold text-success">Dedicated Team</h5>
+                    <p class="mb-0 text-muted">Our team is committed to
+                      providing
+                      you with top-notch service and support.</p>
+                  </div>
                 </div>
               </div>
+
+              <!-- Card 3 -->
               <div class="col-md-4">
-                <div class="shadow p-3  bg-body-tertiary rounded">
-                  <h2>No Hidden Cost</h2>
-                  <span>We believe in transparent pricing – what you see is what
-                    you pay, with no surprises.</span>
+                <div
+                  class="shadow p-4 bg-white rounded d-flex align-items-center">
+                  <div class="icon-circle me-3">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <div class="text-start">
+                    <h5 class="fw-bold text-success">24/7 Available</h5>
+                    <p class="mb-0 text-muted">We are always here to assist you,
+                      anytime and anywhere.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="py-5">
-          <div class="container px-4">
-            <h2 class="mb-4">Our Services</h2>
-            <div class="row g-4">
-              <div class="col-md-4">
-                <img src="images/service-1.jpg" alt="service1-img"
-                  class="img-fluid rounded shadow">
+        <!-- Counter Section Start -->
+
+        <section class="counter-section text-white text-center mt-5">
+          <div class="overlay"></div>
+          <div class="container position-relative py-5">
+            <div class="row mt-5 fs-4 fw-bold">
+              <div class="col-md-3">
+                <h2 class="fw-bold display-6 counter " data-target="1224">0</h2>
+                <p>Happy Clients</p>
               </div>
-              <div class="col-md-4">
-                <img src="images/service-2.jpg" alt="service2-img"
-                  class="img-fluid rounded shadow">
+              <div class="col-md-3">
+                <h2 class="fw-bold display-6 counter " data-target="1234">0</h2>
+                <p>Garden Completed</p>
               </div>
-              <div class="col-md-4">
-                <img src="images/service-3.jpg" alt="service3-img"
-                  class="img-fluid rounded shadow">
+              <div class="col-md-3">
+                <h2 class="fw-bold display-6 counter " data-target="1334">0</h2>
+                <p>Dedicated Staff</p>
               </div>
-              <div class="col-md-4">
-                <img src="images/service-4.jpg" alt="service4-img"
-                  class="img-fluid rounded shadow">
-              </div>
-              <div class="col-md-4">
-                <img src="images/service-5.jpg" alt="service5-img"
-                  class="img-fluid rounded shadow">
-              </div>
-              <div class="col-md-4">
-                <img src="images/service-6.jpg" alt="service6-img"
-                  class="img-fluid rounded shadow">
+              <div class="col-md-3">
+                <h2 class="fw-bold display-6 counter " data-target="1434">0</h2>
+                <p>Awards Achieved</p>
               </div>
             </div>
           </div>
         </section>
+
+        <!-- Counter Section End -->
+
+        <!-- Why Choosing Us Section Start -->
+        <section class="py-5">
+          <div class="container">
+            <div class="row align-items-center">
+
+              <!-- Left Content -->
+              <div class="col-lg-6 mb-4 mb-lg-0">
+                <h6 class="text-success fw-bold">Why Choosing Us!</h6>
+                <h2 class="fw-bold display-5">Few Reasons Why People Choosing
+                  Us!</h2>
+                <p class="mt-3 text-muted">
+                  Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
+                  Aliqu diam amet diam et eos.
+                  Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo
+                  justo magna dolore erat amet
+                </p>
+                <a href="#" class="btn btn-success p-3 mt-3">Explore More</a>
+              </div>
+
+              <!-- Right Content  -->
+              <div class="col-lg-6">
+                <div class="row g-4">
+
+                  <!-- Card 1 -->
+                  <div class="col-md-6">
+                    <div
+                      class="card border-0 text-center p-4 h-100 shadow-lg rounded-4">
+                      <div
+                        class="rounded-circle bg-success bg-opacity-10 d-flex justify-content-center align-items-center mx-auto mb-3"
+                        style="width:80px; height:80px;">
+                        <i class="bi bi-check-lg text-success"
+                          style="font-size:42px; font-weight:900;"></i>
+                      </div>
+                      <h5 class="fw-bold">100% Satisfaction</h5>
+                    </div>
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div class="col-md-6">
+                    <div
+                      class="card border-0 text-center p-4 h-100 shadow-lg rounded-4">
+                      <div
+                        class="rounded-circle bg-success bg-opacity-10 d-flex justify-content-center align-items-center mx-auto mb-3"
+                        style="width:80px; height:80px;">
+                        <i class="bi bi-tools text-success"
+                          style="font-size:42px; font-weight:900;"></i>
+                      </div>
+                      <h5 class="fw-bold">Modern Equipment</h5>
+                    </div>
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div class="col-md-6">
+                    <div
+                      class="card border-0 text-center p-4 h-100 shadow-lg rounded-4">
+                      <div
+                        class="rounded-circle bg-success bg-opacity-10 d-flex justify-content-center align-items-center mx-auto mb-3"
+                        style="width:80px; height:80px;">
+                        <i class="bi bi-people text-success"
+                          style="font-size:42px; font-weight:900;"></i>
+                      </div>
+                      <h5 class="fw-bold">Dedicated Team</h5>
+                    </div>
+                  </div>
+
+                  <!-- Card 4  -->
+                  <div class="col-md-6">
+                    <div
+                      class="card border-0 text-center p-4 h-100 shadow-lg rounded-4">
+                      <div
+                        class="rounded-circle bg-success bg-opacity-10 d-flex justify-content-center align-items-center mx-auto mb-3"
+                        style="width:80px; height:80px;">
+                        <i class="bi bi-clock-history text-success"
+                          style="font-size:42px; font-weight:900;"></i>
+                      </div>
+                      <h5 class="fw-bold">24/7 Available</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Why Choosing Us Section End -->
+
+        <section class="py-5 text-center mt-5">
+          <h5 class="mb-3 fs-3" style="color:#008000bd">Our Services </h5>
+          <h1 style="color: #0b3d2e;"><b>Services That we <br>Offer For You</b>
+          </h1>
+        </section>
+
+        <section class="container pb-5 ">
+          <div class="row g-4">
+
+            <div class="col-md-4">
+              <div class="service-box landscaping-hover">
+                <img src="images/icon-1.png" alt="Landscaping"
+                  class="service-icon">
+                <h5>Landscaping</h5>
+                <p>
+                  Erat ipsum justo amet duo et elitr dolor, est duo duo eos
+                  lorem
+                  sed diam stet diam sed stet.
+                </p>
+                <div class="toggle-container">
+                  <span class="toggle-icon">+</span>
+                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="service-box pruning-hover">
+                <img src="images/icon-2.png" alt="Pruning Plants"
+                  class="service-icon">
+                <h5>Pruning plants</h5>
+                <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos
+                  lorem
+                  sed diam stet diam sed stet.</p>
+                <div class="toggle-container">
+                  <span class="toggle-icon">+</span>
+                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="service-box irrigation-hover">
+                <img src="images/icon-3.png" alt="Irrigation & Drainage"
+                  class="service-icon">
+                <h5>Irrigation & Drainage</h5>
+                <p>
+                  Erat ipsum justo amet duo et elitr dolor, est duo duo eos
+                  lorem
+                  sed diam stet diam sed stet.
+                </p>
+                <div class="toggle-container">
+                  <span class="toggle-icon">+</span>
+                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="service-box maintenance-hover">
+                <img src="images/icon-4.png" alt="Garden Maintenance"
+                  class="service-icon">
+                <h5>Garden Maintenance</h5>
+                <p>
+                  Erat ipsum justo amet duo et elitr dolor, est duo duo eos
+                  lorem
+                  sed diam stet diam sed stet.
+                </p>
+                <div class="toggle-container">
+                  <span class="toggle-icon">+</span>
+                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="service-box technology-hover">
+                <img src="images/icon-5.png" alt="Green Technology"
+                  class="service-icon">
+                <h5>Green Technology</h5>
+                <p>
+                  Erat ipsum justo amet duo et elitr dolor, est duo duo eos
+                  lorem
+                  sed diam stet diam sed stet.
+                </p>
+                <div class="toggle-container">
+                  <span class="toggle-icon">+</span>
+                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="service-box gardening-hover">
+                <img src="images/icon-6.png" alt="Urban Gardening"
+                  class="service-icon">
+                <h5>Urban Gardening</h5>
+                <p>
+                  Erat ipsum justo amet duo et elitr dolor, est duo duo eos
+                  lorem
+                  sed diam stet diam sed stet.
+                </p>
+                <div class="toggle-container">
+                  <span class="toggle-icon">+</span>
+                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+         <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="col-md-6">
+      <div class="card shadow p-4 ">
+        <h3 class="text-center mb-4">Feedback Form</h3>
+        <form>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Your Mobile" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Service Type" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+          </div>  
 
       </main>
 
@@ -335,6 +737,61 @@
         </div>
       </footer>
       <!-- Footer End -->
+
+      <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".counter");
+    const speed = 200; // smaller = faster
+
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const target = +counter.getAttribute("data-target");
+        const updateCount = () => {
+          const current = +counter.innerText;
+          const increment = Math.ceil(target / speed);
+
+          if (current < target) {
+            counter.innerText = current + increment;
+            setTimeout(updateCount, 10);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
+    };
+
+    // Trigger animation when section is in viewport
+    const section = document.querySelector(".counter-section");
+    let started = false;
+    window.addEventListener("scroll", () => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (sectionTop < windowHeight && !started) {
+        started = true;
+        animateCounters();
+      }
+    });
+  });
+</script>
+
+<script>
+  function showMessage() {
+    alert("Form Submitted Successfully!");
+  }
+</script>
+
+
+<div class="text-center">
+  <button type="button" class="btn btn-success px-4" onclick="showMessage()">Submit Now</button>
+  <p id="successMsg" class="text-success mt-3" style="display:none;">Form Submitted Successfully!</p>
+</div>
+
+<script>
+  function showMessage() {
+    document.getElementById("successMsg").style.display = "block";
+  }
+</script>
 
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
