@@ -47,100 +47,99 @@
         content: "/";
         color:#fff;
       }
-    /* Team Image Styling */
-     .team-item img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #dbeedb;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+      /* === Team Section Styling === */
 
-/* Hover Effect */
-   .team-item img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/*** Team ***/
+/* Container for each team member */
 .team-item {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background-color: #f9fefb;
+  transition: transform 0.3s ease;
 }
 
-/* Square image container with soft border and shadow */
+/* Image container */
 .team-img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Image fills square and zooms on hover */
+/* Team member image */
 .team-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0 !important;
-    transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: 0;
 }
 
+/* Zoom effect on hover */
 .team-item:hover .team-img img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-/* Text overlay styling */
-.team-item .team-text {
-    position: absolute;
-    width: calc(100% - 45px);
-    left: -100%;
-    bottom: 45px;
-    padding: 1.5rem;
-    background: #FFFFFF;
-    border-radius: 0 4px 4px 0;
-    opacity: 0;
-    transition: 0.5s;
+/* Text overlay */
+.team-text {
+  position: absolute;
+  width: calc(100% - 45px);
+  left: -100%;
+  bottom: 45px;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 0 4px 4px 0;
+  opacity: 0;
+  transition: 0.5s ease;
+  z-index: 2;
 }
 
 .team-item:hover .team-text {
-    left: 0;
-    opacity: 1;
+  left: 0;
+  opacity: 1;
 }
 
-/* Social icon buttons */
-.team-item .team-social .btn {
-    background: var(--light);
-    color: var(--primary);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s, color 0.3s;
+/* Name and role */
+.team-text h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
 }
 
-.team-item .team-social .btn:hover {
-    background: var(--primary);
-    color: var(--light);
+.team-text p {
+  font-size: 1rem;
+  color: #6c9c7c;
+  margin-bottom: 1rem;
 }
 
-/* Social icon container on image */
-.team-item .team-img .team-social {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s;
-    z-index: 3;
-    opacity: 0;
+/* Social icons */
+.team-social {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.team-item:hover .team-img .team-social {
-    transition-delay: 0.3s;
-    opacity: 1;
+.team-social .btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eef5ee;
+  color: #6c9c7c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+.team-social .btn:hover {
+  background: #6c9c7c;
+  color: #ffffff;
+}
+
+/* Optional: fade-in animation */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 
@@ -180,10 +179,6 @@
     background: var(--primary);
     color: var(--light);
 }
-
-
-
-
     </style>
   </head>
   <body>
@@ -270,10 +265,7 @@
     </header>
 
     <!-- Header End -->
-     
-
       <!-- Bottom Header -->
-
       <main>
         <section class="page-header d-flex align-items-center">
           <div class="overlay"></div>
@@ -293,9 +285,7 @@
         </section>
       </main>
       <!-- Bottom End -->
-
        <!-- OurTeam Heading -->
-
       <section class="py-5 text-center">
         <h5 style="color:#008000bd">Our Team </h5>
         <h1 style="color: #0b3d2e;"><b>Dedicated & <br>Experienced Team <br>Members</b>
@@ -321,7 +311,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Team Member 2 -->
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="team-item rounded">
