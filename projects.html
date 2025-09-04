@@ -83,6 +83,7 @@
         border-radius: 0.5rem;
       }
 
+      /* Image zoom effect */
       .project-item img {
         transition: transform 0.6s ease;
         display: block;
@@ -93,54 +94,62 @@
         transform: scale(1.1);
       }
 
-      /* Overlay left & right */
-      .project-item::before,
-      .project-item::after {
-        content: "";
+      /* Overlay effect */
+      .project-overlay {
         position: absolute;
         top: 0;
-        width: 50%;
-        height: 100%;
-        background: #0b3d2e;
-        opacity: 0.60;
-        transition: all 0.6s ease;
-        z-index: 1;
-      }
-
-      .project-item::before {
-        left: -50%;
-      }
-      .project-item::after {
-        right: -50%;
-      }
-
-      .project-item:hover::before {
         left: 0;
-      }
-      .project-item:hover::after {
-        right: 0;
-      }
-
-      /* Center Text - hidden by default */
-      .project-title {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #fff;
-        font-size: 1.50rem;
-        font-weight: 700;
-        z-index: 2;
-        text-align: center;
-        white-space: nowrap;
-        opacity: 0;                 /* hidden initially */
+        width: 100%;
+        height: 100%;
+        background: rgba(11, 61, 46, 0.7); /* Green overlay */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
         transition: opacity 0.4s ease;
+        z-index: 2;
       }
 
-      .project-item:hover .project-title {
-        opacity: 1;                 /* visible on hover */
+      /* Show overlay on hover */
+      .project-item:hover .project-overlay {
+        opacity: 1;
       }
 
+      /* Project Title */
+      .project-overlay .project-title {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      /* Buttons container */
+      .project-buttons {
+        display: flex;
+        gap: 15px;
+      }
+
+      /* Circular buttons */
+      .project-buttons .btn-icon {
+        background-color: #fff;
+        color: #198754;
+        font-size: 1.2rem;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .project-buttons .btn-icon:hover {
+        background-color: #198754;
+        color: #fff;
+      }
     </style>
   </head>
   <body>
@@ -256,94 +265,82 @@
         <div class="tab-pane fade show active" id="all">
           <div class="row g-4">
 
+            <!-- Project Card Example -->
             <div class="col-md-4">
               <div class="project-item shadow-sm">
-                <img src="images/service-1.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Landscaping</h4>
+                <img src="images/service-1.jpg" class="img-fluid rounded-3" alt="Landscaping">
+                <div class="project-overlay">
+                  <h4 class="project-title">Landscaping</h4>
+                  <div class="project-buttons">
+                    <a href="#" class="btn-icon"><i class="bi bi-eye"></i></a>
+                    <a href="#" class="btn-icon"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="project-item shadow-sm">
-                <img src="images/service-2.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Pruning plants</h4>
+                <img src="images/service-2.jpg" class="img-fluid rounded-3" alt="Pruning Plants">
+                <div class="project-overlay">
+                  <h4 class="project-title">Pruning Plants</h4>
+                  <div class="project-buttons">
+                    <a href="#" class="btn-icon"><i class="bi bi-eye"></i></a>
+                    <a href="#" class="btn-icon"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="project-item shadow-sm">
-                <img src="images/service-3.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Irrigation & Drainage</h4>
+                <img src="images/service-3.jpg" class="img-fluid rounded-3" alt="Irrigation & Drainage">
+                <div class="project-overlay">
+                  <h4 class="project-title">Irrigation & Drainage</h4>
+                  <div class="project-buttons">
+                    <a href="#" class="btn-icon"><i class="bi bi-eye"></i></a>
+                    <a href="#" class="btn-icon"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="project-item shadow-sm">
-                <img src="images/service-4.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Garden Maintenance</h4>
+                <img src="images/service-4.jpg" class="img-fluid rounded-3" alt="Garden Maintenance">
+                <div class="project-overlay">
+                  <h4 class="project-title">Garden Maintenance</h4>
+                  <div class="project-buttons">
+                    <a href="#" class="btn-icon"><i class="bi bi-eye"></i></a>
+                    <a href="#" class="btn-icon"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="project-item shadow-sm">
-                <img src="images/service-5.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Green Technology</h4>
+                <img src="images/service-5.jpg" class="img-fluid rounded-3" alt="Green Technology">
+                <div class="project-overlay">
+                  <h4 class="project-title">Green Technology</h4>
+                  <div class="project-buttons">
+                    <a href="#" class="btn-icon"><i class="bi bi-eye"></i></a>
+                    <a href="#" class="btn-icon"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="project-item shadow-sm">
-                <img src="images/service-6.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Urban Gardening</h4>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div class="tab-pane fade" id="complete">
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="project-item shadow-sm">
-                <img src="images/service-1.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Landscaping</h4>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="project-item shadow-sm">
-                <img src="images/service-3.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Irrigation & Drainage</h4>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="project-item shadow-sm">
-                <img src="images/service-5.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Green Technology</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane fade" id="ongoing">
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="project-item shadow-sm">
-                <img src="images/service-2.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Pruning plants</h4>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="project-item shadow-sm">
-                <img src="images/service-4.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Garden Maintenance</h4>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="project-item shadow-sm">
-                <img src="images/service-6.jpg" class="img-fluid rounded-3">
-                <h4 class="project-title">Urban Gardening</h4>
+                <img src="images/service-6.jpg" class="img-fluid rounded-3" alt="Urban Gardening">
+                <div class="project-overlay">
+                  <h4 class="project-title">Urban Gardening</h4>
+                  <div class="project-buttons">
+                    <a href="#" class="btn-icon"><i class="bi bi-eye"></i></a>
+                    <a href="#" class="btn-icon"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
               </div>
             </div>
 
