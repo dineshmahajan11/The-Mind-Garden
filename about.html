@@ -271,6 +271,28 @@
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
+.counter-section {
+  position: relative;
+  background: url('images/baner2.jpg') center center/cover no-repeat;
+  min-height: 300px;
+}
+
+.counter-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:#0b3d2e;
+  opacity: 0.60; /* lighter green overlay */ 
+  z-index: 1;
+}
+
+.counter-section .container {
+  position: relative;
+  z-index: 2;
+}
     </style>
   </head>
   <body>
@@ -384,27 +406,27 @@
       </div>
       <!-- Center Content -->
       <div class="col-lg-6 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
-        <h1 class="experience-number mb-0"><strong>25</strong></h1>
-        <p class="experience-label mb-4">Years of Experience</p>
-        <h2 class="about-heading mb-4"><strong>We Make Your Home Like A Garden</strong></h2>
+        <h1 class="experience-number mb-0 text-success"><strong>25</strong></h1>
+        <p class="experience-label mb-4 text-success">Years of Experience</p>
+        <h2 class="about-heading mb-4 " style="color: #0b3d2e;"><strong>We Make Your Home Like A Garden</strong></h2>
         <p class="about-description mb-4">
           Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet.
         </p>
-        <a class="btn btn-primary py-3 px-4" href="#">Explore More</a>
+        <a class="btn btn-success py-3 px-4" href="#">Explore More</a>
       </div>
       <!-- Right Features -->
       <div class="col-lg-3 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
         <div class="row g-5">
           <div class="col-12 col-sm-6 col-lg-12">
             <div class="feature-box border-start ps-4">
-              <i class="fa fa-award fa-3x text-primary mb-3"></i>
+              <i class="fa fa-award fa-3x text-success mb-3"></i>
               <h4 class="mb-3">Award Winning</h4>
               <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna.</p>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-lg-12">
             <div class="feature-box border-start ps-4">
-              <i class="fa fa-users fa-3x text-primary mb-3"></i>
+              <i class="fa fa-users fa-3x text-success mb-3"></i>
               <h4 class="mb-3">Dedicated Team</h4>
               <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna.</p>
             </div>
@@ -415,31 +437,31 @@
     </div>
   </div>
 </section>
-<!-- Parallax Facts Section Start -->
-<section class="facts-banner my-5 py-5 text-light" style="background-image: url('images/baner1.jpg'); background-attachment: fixed; background-size: cover; background-position: center; position: relative;">
-  <div class="overlay"></div>
-  <div class="container position-relative py-5">
-    <div class="row g-5 text-center">
-      <div class="col-sm-6 col-lg-3">
-        <h2 class="counter display-6 fw-bold" style="animation-delay: 0.2s;">1224</h2>
-        <p class="fs-5 fst-italic">Hearts Tended with Care</p>
-      </div>
-      <div class="col-sm-6 col-lg-3">
-        <h2 class="counter display-6 fw-bold" style="animation-delay: 0.4s;">1234</h2>
-        <p class="fs-5 fst-italic">Sanctuaries Grown from Soil & Soul</p>
-      </div>
-      <div class="col-sm-6 col-lg-3">
-        <h2 class="counter display-6 fw-bold" style="animation-delay: 0.6s;">1334</h2>
-        <p class="fs-5 fst-italic">Hands that Nurture and Create</p>
-      </div>
-      <div class="col-sm-6 col-lg-3">
-        <h2 class="counter display-6 fw-bold" style="animation-delay: 0.8s;">1434</h2>
-        <p class="fs-5 fst-italic">Moments of Quiet Recognition</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Parallax Facts Section End -->
+<!-- Counter Section Start -->
+<section class="counter-section text-white text-center mt-5">
+        <div class="overlay"></div>
+        <div class="container position-relative py-5">
+          <div class="row mt-5 fs-4 fw-bold">
+            <div class="col-md-3">
+              <h2 class="fw-bold display-6 counter " data-target="1224">0</h2>
+              <p>Happy Clients</p>
+            </div>
+            <div class="col-md-3">
+              <h2 class="fw-bold display-6 counter " data-target="1234">0</h2>
+              <p>Garden Completed</p>
+            </div>
+            <div class="col-md-3">
+              <h2 class="fw-bold display-6 counter " data-target="1334">0</h2>
+              <p>Dedicated Staff</p>
+            </div>
+            <div class="col-md-3">
+              <h2 class="fw-bold display-6 counter " data-target="1434">0</h2>
+              <p>Awards Achieved</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Couter Section End  -->
  <!-- Team Start -->
 <div class="container py-5">
     <div class="row g-4">
@@ -585,6 +607,43 @@
       </div>
     </footer>
     <!-- Footer End -->
+
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".counter");
+    const speed = 200; // smaller = faster
+
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const target = +counter.getAttribute("data-target");
+        const updateCount = () => {
+          const current = +counter.innerText;
+          const increment = Math.ceil(target / speed);
+
+          if (current < target) {
+            counter.innerText = current + increment;
+            setTimeout(updateCount, 10);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
+    };
+
+    // Trigger animation when section is in viewport
+    const section = document.querySelector(".counter-section");
+    let started = false;
+    window.addEventListener("scroll", () => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (sectionTop < windowHeight && !started) {
+        started = true;
+        animateCounters();
+      }
+    });
+  });
+</script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
