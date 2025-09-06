@@ -15,11 +15,63 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
 
-    .slider-h{
-      font-family:'Times New Roman', Times, serif;
-      font-size: 80px;
-      margin-top: 200px;
-    }
+      /* Default (Large Screens) */
+.slider-h {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 80px;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+/* For Laptops and Desktops (Below 1200px) */
+@media (max-width: 1200px) {
+  .slider-h {
+    font-size: 60px;
+  }
+}
+
+/* For Tablets (Below 992px) */
+@media (max-width: 992px) {
+  .slider-h {
+    font-size: 50px;
+  }
+  .carousel-caption a.btn {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+}
+
+/* For Small Tablets & Large Mobiles (Below 768px) */
+@media (max-width: 768px) {
+  .slider-h {
+    font-size: 40px;
+  }
+  .carousel-caption {
+    bottom: 50px; /* Move content up */
+    padding: 0 10px;
+  }
+  .carousel-caption a.btn {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+}
+
+/* For Mobile Phones (Below 576px) */
+@media (max-width: 576px) {
+  .slider-h {
+    font-size: 40px;
+  }
+  .carousel-caption {
+    bottom: 40px;
+    padding: 0 8px;
+  }
+  .carousel-caption a.btn {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+}
+
+
     .carousel-item {
       position: relative;
     }
@@ -326,7 +378,7 @@
       </div>
     </div>
 
-    <header>
+    <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
         <div class="container-fluid">
           <!-- Logo -->
@@ -458,7 +510,11 @@
                   With years of experience, we bring life and beauty to your
                   space
                 </p>
-                <a href="#" class="btn btn-success p-3 mt-3">Explore More</a>
+                <a href="#" class="btn btn-success p-3 mt-3"
+                  data-bs-toggle="modal" data-bs-target="#exploreModal">
+                  Explore More
+                </a>
+
               </div>
 
               <!-- Right Content  -->
@@ -579,8 +635,6 @@
           </div>
         </section>
 
-        
-
         <!-- Counter Section Start -->
 
         <section class="counter-section text-white text-center mt-5">
@@ -609,29 +663,27 @@
 
         <!-- Counter Section End -->
 
-
-        <section class="py-5 text-center">
+        <section class="py-5 text-center mt-5">
           <h5 class="mb-3 fs-3" style="color:#008000bd">Our Services </h5>
-          <h1 style="color: #0b3d2e;"><b>Services That we <br>Offer For You</b>
-          </h1>
+          <h1 style="color: #0b3d2e;"><b>Services That we <br>Offer For
+              You</b></h1>
         </section>
 
         <section class="container pb-5 ">
           <div class="row g-4">
-
+            <!-- Service Cards -->
             <div class="col-md-4">
               <div class="service-box landscaping-hover">
                 <img src="images/icon-1.png" alt="Landscaping"
                   class="service-icon">
                 <h5>Landscaping</h5>
-                <p>
-                  Your space is perfectly and beautifully designed. It brings
-                  harmony and elegance, ensuring every detail is crafted with
-                  care and precision.
-                </p>
+                <p>Your space is perfectly and beautifully designed, ensuring
+                  harmony and elegance.</p>
                 <div class="toggle-container">
                   <span class="toggle-icon">+</span>
-                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                  <a href="#" class="btn btn-sm btn-success"
+                    data-bs-toggle="modal" data-bs-target="#serviceModal">Read
+                    More</a>
                 </div>
               </div>
             </div>
@@ -641,12 +693,13 @@
                 <img src="images/icon-2.png" alt="Pruning Plants"
                   class="service-icon">
                 <h5>Pruning plants</h5>
-                <p>Pruning keeps plants healthy and well-shaped, our experts
-                  trim with care to promote growth and maintain garden
-                  beauty</p>
+                <p>Pruning keeps plants healthy and well-shaped for growth and
+                  beauty.</p>
                 <div class="toggle-container">
                   <span class="toggle-icon">+</span>
-                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                  <a href="#" class="btn btn-sm btn-success"
+                    data-bs-toggle="modal" data-bs-target="#serviceModal">Read
+                    More</a>
                 </div>
               </div>
             </div>
@@ -656,13 +709,13 @@
                 <img src="images/icon-3.png" alt="Irrigation & Drainage"
                   class="service-icon">
                 <h5>Irrigation & Drainage</h5>
-                <p>
-                  Proper irrigation ensures healthy growth, while efficient
-                  drainage prevents water damage and keeps your garden thriving.
-                </p>
+                <p>Proper irrigation ensures healthy growth and efficient
+                  drainage.</p>
                 <div class="toggle-container">
                   <span class="toggle-icon">+</span>
-                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                  <a href="#" class="btn btn-sm btn-success"
+                    data-bs-toggle="modal" data-bs-target="#serviceModal">Read
+                    More</a>
                 </div>
               </div>
             </div>
@@ -672,13 +725,13 @@
                 <img src="images/icon-4.png" alt="Garden Maintenance"
                   class="service-icon">
                 <h5>Garden Maintenance</h5>
-                <p>
-                  Regular care keeps your garden neat and vibrant, our team
-                  maintains plants, soil, and design for lasting beauty.
-                </p>
+                <p>Regular care keeps your garden neat, healthy, and
+                  vibrant.</p>
                 <div class="toggle-container">
                   <span class="toggle-icon">+</span>
-                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                  <a href="#" class="btn btn-sm btn-success"
+                    data-bs-toggle="modal" data-bs-target="#serviceModal">Read
+                    More</a>
                 </div>
               </div>
             </div>
@@ -688,13 +741,13 @@
                 <img src="images/icon-5.png" alt="Green Technology"
                   class="service-icon">
                 <h5>Green Technology</h5>
-                <p>
-                  We use eco-friendly tools and smart methods, reducing waste
-                  while keeping your garden healthy and sustainable
-                </p>
+                <p>We use eco-friendly tools and sustainable gardening
+                  methods.</p>
                 <div class="toggle-container">
                   <span class="toggle-icon">+</span>
-                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                  <a href="#" class="btn btn-sm btn-success"
+                    data-bs-toggle="modal" data-bs-target="#serviceModal">Read
+                    More</a>
                 </div>
               </div>
             </div>
@@ -704,19 +757,141 @@
                 <img src="images/icon-6.png" alt="Urban Gardening"
                   class="service-icon">
                 <h5>Urban Gardening</h5>
-                <p>
-                  Transform small spaces into green retreats, our team designs
-                  and maintains vibrant gardens for city living.
-                </p>
+                <p>Transform small spaces into beautiful green retreats.</p>
                 <div class="toggle-container">
                   <span class="toggle-icon">+</span>
-                  <a href="#" class="btn btn-sm btn-success">Read More</a>
+                  <a href="#" class="btn btn-sm btn-success"
+                    data-bs-toggle="modal" data-bs-target="#serviceModal">Read
+                    More</a>
                 </div>
               </div>
             </div>
-
           </div>
         </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="serviceModal" tabindex="-1"
+          aria-labelledby="serviceModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="serviceModalLabel">Service
+                  Details</h5>
+                <button type="button" class="btn-close btn-close-white"
+                  data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Accordion -->
+                <div class="accordion" id="serviceAccordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                        aria-expanded="true">
+                        Landscaping
+                      </button>
+                    </h2>
+                    <div id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#serviceAccordion">
+                      <div class="accordion-body">
+                        Landscaping involves designing outdoor spaces with
+                        balance, harmony, and beauty.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        Pruning Plants
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse"
+                      data-bs-parent="#serviceAccordion">
+                      <div class="accordion-body">
+                        Pruning promotes healthy growth and keeps plants
+                        well-shaped and beautiful.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree">
+                        Irrigation & Drainage
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse"
+                      data-bs-parent="#serviceAccordion">
+                      <div class="accordion-body">
+                        Proper irrigation and drainage systems help maintain a
+                        thriving garden.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour">
+                        Garden Maintenance
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse"
+                      data-bs-parent="#serviceAccordion">
+                      <div class="accordion-body">
+                        Regular care ensures your garden stays healthy and
+                        visually appealing.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                      <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive">
+                        Green Technology
+                      </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse"
+                      data-bs-parent="#serviceAccordion">
+                      <div class="accordion-body">
+                        Using eco-friendly tools and technology to support a
+                        sustainable garden.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                      <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                        Urban Gardening
+                      </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse"
+                      data-bs-parent="#serviceAccordion">
+                      <div class="accordion-body">
+                        Creative solutions to transform small urban spaces into
+                        green retreats.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                  data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Projects Intro -->
         <section class="py-5 text-center mt-5">
@@ -1092,21 +1267,27 @@
               <div class="col-md-4 mb-4">
                 <h5 class="fw-bold mb-4">Services</h5>
                 <ul class="list-unstyled">
-                  <li><span class="text-success">›</span> <a href="services.html"
+                  <li><span class="text-success">›</span> <a
+                      href="services.html"
                       class="text-white text-decoration-none">Landscaping</a></li>
-                  <li><span class="text-success">›</span> <a href="services.html"
+                  <li><span class="text-success">›</span> <a
+                      href="services.html"
                       class="text-white text-decoration-none">Pruning
                       Plants</a></li>
-                  <li><span class="text-success">›</span> <a href="services.html"
+                  <li><span class="text-success">›</span> <a
+                      href="services.html"
                       class="text-white text-decoration-none">Irrigation &
                       Drainage</a></li>
-                  <li><span class="text-success">›</span> <a href="services.html"
+                  <li><span class="text-success">›</span> <a
+                      href="services.html"
                       class="text-white text-decoration-none">Garden
                       Maintenance</a></li>
-                  <li><span class="text-success">›</span> <a href="services.html"
+                  <li><span class="text-success">›</span> <a
+                      href="services.html"
                       class="text-white text-decoration-none">Green
                       Technology</a></li>
-                  <li><span class="text-success">›</span> <a href="services.html"
+                  <li><span class="text-success">›</span> <a
+                      href="services.html"
                       class="text-white text-decoration-none">Urban
                       Gardening
                     </a></li>
@@ -1150,6 +1331,102 @@
           </div>
         </footer>
         <!-- Footer End -->
+
+        <!-- Explore More Modal -->
+        <div class="modal fade" id="exploreModal" tabindex="-1"
+          aria-labelledby="exploreModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-4 shadow-lg">
+
+              <!-- Modal Header -->
+              <div class="modal-header bg-success text-white">
+                <h5 class="modal-title fw-bold" id="exploreModalLabel">More
+                  About
+                  Us</h5>
+                <button type="button" class="btn-close btn-close-white"
+                  data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <!-- Modal Body with Accordions -->
+              <div class="modal-body">
+                <div class="accordion" id="exploreAccordion">
+
+                  <!-- Accordion Item 1 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        Our Mission
+                      </button>
+                    </h2>
+                    <div id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      aria-labelledby="headingOne"
+                      data-bs-parent="#exploreAccordion">
+                      <div class="accordion-body">
+                        Our mission is to provide eco-friendly gardening
+                        solutions
+                        that bring beauty, peace, and sustainability to every
+                        space we touch.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Accordion Item 2 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo">
+                        Why Choose Us
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse"
+                      aria-labelledby="headingTwo"
+                      data-bs-parent="#exploreAccordion">
+                      <div class="accordion-body">
+                        We stand out for our dedicated team, modern equipment,
+                        and
+                        a promise of 100% satisfaction to every client we serve.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Accordion Item 3 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree">
+                        Our Services
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse"
+                      aria-labelledby="headingThree"
+                      data-bs-parent="#exploreAccordion">
+                      <div class="accordion-body">
+                        We offer landscaping, garden maintenance, irrigation
+                        systems, urban gardening solutions, and much more to
+                        bring
+                        your dream garden to life.
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Modal Footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                  data-bs-dismiss="modal">Close</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
 
         <script>
   document.addEventListener("DOMContentLoaded", () => {
