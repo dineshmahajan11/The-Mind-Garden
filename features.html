@@ -112,8 +112,9 @@
       </div>
     </div>
     <!-- Header Start -->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
+    <header class="sticky-top">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm ">
         <div class="container-fluid">
           <!-- Logo -->
           <a class="navbar-brand fw-bold fs-1 text-success" href="#">Navbar</a>
@@ -200,85 +201,9 @@
     <!-- Main Section Start -->
 
     <main>
-      <section>
-        <div class="container py-5 text-center mt-5">
-          <div class="row g-4">
-            <!-- Card 1 -->
-            <div class="col-md-4">
-              <div
-                class="shadow p-4 bg-white rounded d-flex align-items-center">
-                <div class="icon-circle me-3">
-                  <i class="bi bi-x-lg"></i>
-                </div>
-                <div class="text-start">
-                  <h5 class="fw-bold text-success">No Hidden Cost</h5>
-                  <p class="mb-0 text-muted">We believe in transparent pricing
-                    what you see is what you pay.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="col-md-4">
-              <div
-                class="shadow p-4 bg-white rounded d-flex align-items-center">
-                <div class="icon-circle me-3">
-                  <i class="bi bi-people-fill"></i>
-                </div>
-                <div class="text-start">
-                  <h5 class="fw-bold text-success">Dedicated Team</h5>
-                  <p class="mb-0 text-muted">Our team is committed to providing
-                    you with top-notch service and support.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="col-md-4">
-              <div
-                class="shadow p-4 bg-white rounded d-flex align-items-center">
-                <div class="icon-circle me-3">
-                  <i class="bi bi-telephone-fill"></i>
-                </div>
-                <div class="text-start">
-                  <h5 class="fw-bold text-success">24/7 Available</h5>
-                  <p class="mb-0 text-muted">We are always here to assist you,
-                    anytime and anywhere.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="counter-section text-white text-center mt-5">
-        <div class="overlay"></div>
-        <div class="container position-relative py-5">
-          <div class="row mt-5 fs-4 fw-bold">
-            <div class="col-md-3">
-              <h2 class="fw-bold display-6 counter " data-target="1224">0</h2>
-              <p>Happy Clients</p>
-            </div>
-            <div class="col-md-3">
-              <h2 class="fw-bold display-6 counter " data-target="1234">0</h2>
-              <p>Garden Completed</p>
-            </div>
-            <div class="col-md-3">
-              <h2 class="fw-bold display-6 counter " data-target="1334">0</h2>
-              <p>Dedicated Staff</p>
-            </div>
-            <div class="col-md-3">
-              <h2 class="fw-bold display-6 counter " data-target="1434">0</h2>
-              <p>Awards Achieved</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Main Section End -->
 
       <!-- Why Choosing Us Section Start -->
-      <section class="py-5">
+      <section class="py-5 mt-5">
         <div class="container">
           <div class="row align-items-center">
 
@@ -294,7 +219,11 @@
                 We focus on quality, precision, and customer satisfaction.
                 With years of experience, we bring life and beauty to your space
               </p>
-              <a href="#" class="btn btn-success p-3 mt-3">Explore More</a>
+              <a href="#" class="btn btn-success p-3 mt-3"
+                data-bs-toggle="modal" data-bs-target="#exploreModal">
+                Explore More
+              </a>
+
             </div>
 
             <!-- Right Content  -->
@@ -364,31 +293,114 @@
 
       <!-- Why Choosing Us Section End -->
 
+      <!-- Counter Section Started -->
+
+      <section class="counter-section text-white text-center mt-5">
+        <div class="overlay"></div>
+        <div class="container position-relative py-5">
+          <div class="row mt-5 fs-4 fw-bold">
+            <div class="col-md-3">
+              <h2 class="fw-bold display-6 counter " data-target="1224">0</h2>
+              <p>Happy Clients</p>
+            </div>
+            <div class="col-md-3">
+              <h2 class="fw-bold display-6 counter " data-target="1234">0</h2>
+              <p>Garden Completed</p>
+            </div>
+            <div class="col-md-3">
+              <h2 class="fw-bold display-6 counter " data-target="1334">0</h2>
+              <p>Dedicated Staff</p>
+            </div>
+            <div class="col-md-3">
+              <h2 class="fw-bold display-6 counter " data-target="1434">0</h2>
+              <p>Awards Achieved</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Counter Section End -->
+
+      <section>
+        <div class="container py-5 text-center mt-5">
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+              <div
+                class="shadow p-4 bg-white rounded d-flex align-items-center">
+                <div class="icon-circle me-3">
+                  <i class="bi bi-x-lg"></i>
+                </div>
+                <div class="text-start">
+                  <h5 class="fw-bold text-success">No Hidden Cost</h5>
+                  <p class="mb-0 text-muted">We believe in transparent pricing
+                    what you see is what you pay.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+              <div
+                class="shadow p-4 bg-white rounded d-flex align-items-center">
+                <div class="icon-circle me-3">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <div class="text-start">
+                  <h5 class="fw-bold text-success">Dedicated Team</h5>
+                  <p class="mb-0 text-muted">Our team is committed to providing
+                    you with top-notch service and support.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+              <div
+                class="shadow p-4 bg-white rounded d-flex align-items-center">
+                <div class="icon-circle me-3">
+                  <i class="bi bi-telephone-fill"></i>
+                </div>
+                <div class="text-start">
+                  <h5 class="fw-bold text-success">24/7 Available</h5>
+                  <p class="mb-0 text-muted">We are always here to assist you,
+                    anytime and anywhere.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Section End -->
+
       <!-- Footer Start -->
-      <footer class="text-white pt-5 pb-5" style="background-color:#0d3b2e;">
-        <div class="container mt-5 mb-5">
+      <footer class="text-white pt-3 pb-3"
+        style="background-color:#0d3b2e;">
+        <div class="container mt-5">
           <div class="row">
 
             <!-- Our Office -->
             <div class="col-md-4 mb-4">
               <h5 class="fw-bold mb-4">Our Office</h5>
-              <p><i class="fa fa-map-marker-alt me-2"></i>123 Pimpri, Pune,
+              <p><i class="bi bi-geo-alt me-2"></i>123 Pimpri, Pune,
                 India</p>
-              <p><i class="fa fa-phone-alt me-2"></i>+91 87345 67890</p>
-              <p><i class="fa fa-envelope me-2"></i>info@themindgarden.com</p>
+              <p><i class="bi bi-telephone me-2"></i>+91 87345 67890</p>
+              <p><i
+                  class="bi bi-envelope me-2"></i>info@themindgarden.com</p>
               <div class="d-flex gap-2">
                 <a href="#"
                   class="btn btn-outline-light btn-sm rounded-circle"><i
-                    class="fab fa-twitter"></i></a>
+                    class="bi bi-twitter"></i></a>
                 <a href="#"
                   class="btn btn-outline-light btn-sm rounded-circle"><i
-                    class="fab fa-facebook-f"></i></a>
+                    class="bi bi-facebook"></i></a>
                 <a href="#"
                   class="btn btn-outline-light btn-sm rounded-circle"><i
-                    class="fab fa-youtube"></i></a>
+                    class="bi bi-youtube"></i></a>
                 <a href="#"
                   class="btn btn-outline-light btn-sm rounded-circle"><i
-                    class="fab fa-instagram"></i></a>
+                    class="bi bi-instagram"></i></a>
               </div>
             </div>
 
@@ -396,23 +408,24 @@
             <div class="col-md-4 mb-4">
               <h5 class="fw-bold mb-4">Services</h5>
               <ul class="list-unstyled">
-                <li><span class="text-success">›</span> <a href="#"
+                <li><span class="text-success">›</span> <a href="services.html"
                     class="text-white text-decoration-none">Landscaping</a></li>
-                <li><span class="text-success">›</span> <a href="#"
+                <li><span class="text-success">›</span> <a href="services.html"
                     class="text-white text-decoration-none">Pruning
                     Plants</a></li>
-                <li><span class="text-success">›</span> <a href="#"
+                <li><span class="text-success">›</span> <a href="services.html"
                     class="text-white text-decoration-none">Irrigation &
                     Drainage</a></li>
-                <li><span class="text-success">›</span> <a href="#"
+                <li><span class="text-success">›</span> <a href="services.html"
                     class="text-white text-decoration-none">Garden
                     Maintenance</a></li>
-                <li><span class="text-success">›</span> <a href="#"
+                <li><span class="text-success">›</span> <a href="services.html"
                     class="text-white text-decoration-none">Green
                     Technology</a></li>
-                <li><span class="text-success">›</span> <a href="#"
+                <li><span class="text-success">›</span> <a href="services.html"
                     class="text-white text-decoration-none">Urban
-                    Gardening</a></li>
+                    Gardening
+                  </a></li>
               </ul>
             </div>
 
@@ -420,23 +433,21 @@
             <div class="col-md-4 mb-4">
               <h5 class="fw-bold mb-4">Quick Links</h5>
               <ul class="list-unstyled">
-                <li><span class="text-success">›</span> <a href="about.html"
+                <li><span class="text-success">›</span> <a href="#"
                     class="text-white text-decoration-none">About</a></li>
-                <li><span class="text-success">›</span> <a href="services.html"
+                <li><span class="text-success">›</span> <a href="#"
                     class="text-white text-decoration-none">Services</a></li>
-                <li><span class="text-success">›</span> <a href="projects.html"
-                    class="text-white text-decoration-none">Projects</a></li>
-                <li><span class="text-success">›</span> <a href="features.html"
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Projects
+                  </a></li>
+                <li><span class="text-success">›</span> <a href="#"
                     class="text-white text-decoration-none">Features</a></li>
-                <li><span class="text-success">›</span> <a href="ourteam.html"
-                    class="text-white text-decoration-none">Our Team</a></li>
-                <li><span class="text-success">›</span> <a href="feedback.html"
+                <li><span class="text-success">›</span> <a href="#"
                     class="text-white text-decoration-none">Feedback
                     Form</a></li>
-                <li><span class="text-success">›</span> <a href="reviews.html"
-                    class="text-white text-decoration-none">Reviews</a></li>
-                <li><span class="text-success">›</span> <a href="contact.html"
-                    class="text-white text-decoration-none">Contact US</a></li>
+                <li><span class="text-success">›</span> <a href="#"
+                    class="text-white text-decoration-none">Contact
+                    US</a></li>
               </ul>
             </div>
 
@@ -449,11 +460,102 @@
             class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
             <small>© The-Mind-Garden, All Right Reserved.</small>
             <small>Designed By <a href="#"
-                class="text-success text-decoration-none">MAAD GROUP</a></small>
+                class="text-success text-decoration-none">MAAD
+                GROUP</a></small>
           </div>
         </div>
       </footer>
       <!-- Footer End -->
+
+      <!-- Explore More Modal -->
+      <div class="modal fade" id="exploreModal" tabindex="-1"
+        aria-labelledby="exploreModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content rounded-4 shadow-lg">
+
+            <!-- Modal Header -->
+            <div class="modal-header bg-success text-white">
+              <h5 class="modal-title fw-bold" id="exploreModalLabel">More About
+                Us</h5>
+              <button type="button" class="btn-close btn-close-white"
+                data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body with Accordions -->
+            <div class="modal-body">
+              <div class="accordion" id="exploreAccordion">
+
+                <!-- Accordion Item 1 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                      aria-expanded="true" aria-controls="collapseOne">
+                      Our Mission
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#exploreAccordion">
+                    <div class="accordion-body">
+                      Our mission is to provide eco-friendly gardening solutions
+                      that bring beauty, peace, and sustainability to every
+                      space we touch.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                      aria-expanded="false" aria-controls="collapseTwo">
+                      Why Choose Us
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#exploreAccordion">
+                    <div class="accordion-body">
+                      We stand out for our dedicated team, modern equipment, and
+                      a promise of 100% satisfaction to every client we serve.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                      aria-expanded="false" aria-controls="collapseThree">
+                      Our Services
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#exploreAccordion">
+                    <div class="accordion-body">
+                      We offer landscaping, garden maintenance, irrigation
+                      systems, urban gardening solutions, and much more to bring
+                      your dream garden to life.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary"
+                data-bs-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
 
       <script>
   document.addEventListener("DOMContentLoaded", () => {

@@ -99,11 +99,11 @@
     </div>
 
     <!-- Header -->
-    <header>
+    <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
         <div class="container-fluid">
           <a class="navbar-brand fw-bold fs-1 text-success"
-            href="index.html">The Mind Garden</a>
+            href="index.html">Gardener</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav"
             aria-expanded="false">
@@ -173,23 +173,25 @@
               <h4 class="fs-5 fw-bold text-success mb-3">Contact Us</h4>
               <h1 class="custom-heading mb-5">If You Have Any Query, Please
                 Contact Us</h1>
-              <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Corporis unde minima eius illo id impedit explicabo, cum
-                inventore dolorem laborum omnis.</p>
-              <form action="#" method="post">
+              <p class="mb-4">We're here to help!
+                Fill out the form below or reach us through our contact details,
+                and our team will respond as soon as possible.</p>
+              <form id="contactForm" action="#" method="post" novalidate>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="nameInput"
-                        placeholder="Your Name" required>
+                        placeholder="Your Name">
                       <label for="nameInput">Your Name</label>
+                      <span class="text-danger small" id="nameError"></span>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-floating mb-3">
                       <input type="email" class="form-control" id="emailInput"
-                        placeholder="name@example.com" required>
+                        placeholder="name@example.com">
                       <label for="emailInput">Your Email</label>
+                      <span class="text-danger small" id="emailError"></span>
                     </div>
                   </div>
                   <div class="col-12">
@@ -197,6 +199,7 @@
                       <input type="text" class="form-control" id="subjectInput"
                         placeholder="Subject">
                       <label for="subjectInput">Subject</label>
+                      <span class="text-danger small" id="subjectError"></span>
                     </div>
                   </div>
                   <div class="col-12">
@@ -205,23 +208,28 @@
                         placeholder="Leave a message here" id="messageInput"
                         style="height: 120px;"></textarea>
                       <label for="messageInput">Message</label>
+                      <span class="text-danger small" id="messageError"></span>
                     </div>
                   </div>
                   <div class="col-12 mt-3">
                     <button type="submit" class="btn btn-success py-3 px-4">Send
                       Message</button>
                   </div>
+                  <div class="col-12 mt-3">
+                    <div id="formSuccess"
+                      class="alert alert-success d-none">Your message has been
+                      sent successfully!</div>
+                  </div>
                 </div>
               </form>
+
             </div>
             <div class="col-lg-6">
               <div class="ratio ratio-16x9" style="height: 600px;">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.5937935200574!2d73.9335856749619!3d18.554336882552623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1e118fee8bb%3A0xbe465114fb75963f!2sHotel%20Paradise%2C%20Near%20EON%20IT%20Park%2C%20Kharadi%2C%20Pune!5e0!3m2!1sen!2sin!4v1695034597089!5m2!1sen!2sin"
-                  style="border:0;"
-                  allowfullscreen
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade">
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3421.9949020352146!2d73.81847067465397!3d18.599833666749372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b894f421df59%3A0xb746e5737517e585!2skumar%20Gardner!5e1!3m2!1sen!2sin!4v1757085456924!5m2!1sen!2sin"
+                  width="600" height="450" style="border:0;" allowfullscreen
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
               </div>
             </div>
@@ -230,55 +238,58 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="text-white pt-5 pb-5 mt-5">
-      <div class="container">
+    <!-- Footer Start -->
+    <footer class="text-white pt-3 pb-3 mt-5"
+      style="background-color:#0d3b2e;">
+      <div class="container mt-5">
         <div class="row">
+
           <!-- Our Office -->
-           
-            <div class="col-md-4 mb-4">
-              <h5 class="fw-bold mb-4">Our Office</h5>
-              <p><i class="bi bi-geo-alt me-2"></i>123 Pimpri, Pune,
-                India</p>
-              <p><i class="bi bi-telephone me-2"></i>+91 87345 67890</p>
-              <p><i class="bi bi-envelope me-2"></i>info@themindgarden.com</p>
-              <div class="d-flex gap-2">
-                <a href="#"
-                  class="btn btn-outline-light btn-sm rounded-circle"><i
-                    class="bi bi-twitter"></i></a>
-                <a href="#"
-                  class="btn btn-outline-light btn-sm rounded-circle"><i
-                    class="bi bi-facebook"></i></a>
-                <a href="#"
-                  class="btn btn-outline-light btn-sm rounded-circle"><i
-                    class="bi bi-youtube"></i></a>
-                <a href="#"
-                  class="btn btn-outline-light btn-sm rounded-circle"><i
-                    class="bi bi-instagram"></i></a>
-              </div>
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold mb-4">Our Office</h5>
+            <p><i class="bi bi-geo-alt me-2"></i>123 Pimpri, Pune,
+              India</p>
+            <p><i class="bi bi-telephone me-2"></i>+91 87345 67890</p>
+            <p><i
+                class="bi bi-envelope me-2"></i>info@themindgarden.com</p>
+            <div class="d-flex gap-2">
+              <a href="#"
+                class="btn btn-outline-light btn-sm rounded-circle"><i
+                  class="bi bi-twitter"></i></a>
+              <a href="#"
+                class="btn btn-outline-light btn-sm rounded-circle"><i
+                  class="bi bi-facebook"></i></a>
+              <a href="#"
+                class="btn btn-outline-light btn-sm rounded-circle"><i
+                  class="bi bi-youtube"></i></a>
+              <a href="#"
+                class="btn btn-outline-light btn-sm rounded-circle"><i
+                  class="bi bi-instagram"></i></a>
             </div>
+          </div>
 
           <!-- Services -->
           <div class="col-md-4 mb-4">
             <h5 class="fw-bold mb-4">Services</h5>
             <ul class="list-unstyled">
-              <li><span class="text-success">›</span> <a href="#"
+              <li><span class="text-success">›</span> <a href="services.html"
                   class="text-white text-decoration-none">Landscaping</a></li>
-              <li><span class="text-success">›</span> <a href="#"
+              <li><span class="text-success">›</span> <a href="services.html"
                   class="text-white text-decoration-none">Pruning
                   Plants</a></li>
-              <li><span class="text-success">›</span> <a href="#"
+              <li><span class="text-success">›</span> <a href="services.html"
                   class="text-white text-decoration-none">Irrigation &
                   Drainage</a></li>
-              <li><span class="text-success">›</span> <a href="#"
+              <li><span class="text-success">›</span> <a href="services.html"
                   class="text-white text-decoration-none">Garden
                   Maintenance</a></li>
-              <li><span class="text-success">›</span> <a href="#"
+              <li><span class="text-success">›</span> <a href="services.html"
                   class="text-white text-decoration-none">Green
                   Technology</a></li>
-              <li><span class="text-success">›</span> <a href="#"
+              <li><span class="text-success">›</span> <a href="services.html"
                   class="text-white text-decoration-none">Urban
-                  Gardening</a></li>
+                  Gardening
+                </a></li>
             </ul>
           </div>
 
@@ -286,39 +297,117 @@
           <div class="col-md-4 mb-4">
             <h5 class="fw-bold mb-4">Quick Links</h5>
             <ul class="list-unstyled">
-              <li><span class="text-success">›</span> <a href="about.html"
+              <li><span class="text-success">›</span> <a href="#"
                   class="text-white text-decoration-none">About</a></li>
-              <li><span class="text-success">›</span> <a href="services.html"
+              <li><span class="text-success">›</span> <a href="#"
                   class="text-white text-decoration-none">Services</a></li>
-              <li><span class="text-success">›</span> <a href="projects.html"
-                  class="text-white text-decoration-none">Projects</a></li>
-              <li><span class="text-success">›</span> <a href="features.html"
+              <li><span class="text-success">›</span> <a href="#"
+                  class="text-white text-decoration-none">Projects
+                </a></li>
+              <li><span class="text-success">›</span> <a href="#"
                   class="text-white text-decoration-none">Features</a></li>
-              <li><span class="text-success">›</span> <a href="ourteam.html"
-                  class="text-white text-decoration-none">Our Team</a></li>
-              <li><span class="text-success">›</span> <a href="feedback.html"
-                  class="text-white text-decoration-none">Feedback Form</a></li>
-              <li><span class="text-success">›</span> <a href="reviews.html"
-                  class="text-white text-decoration-none">Reviews</a></li>
-              <li><span class="text-success">›</span> <a href="contact.html"
-                  class="text-white text-decoration-none">Contact Us</a></li>
+              <li><span class="text-success">›</span> <a href="#"
+                  class="text-white text-decoration-none">Feedback
+                  Form</a></li>
+              <li><span class="text-success">›</span> <a href="#"
+                  class="text-white text-decoration-none">Contact
+                  US</a></li>
             </ul>
           </div>
+
         </div>
       </div>
-      <div class="footer-bottom py-3">
+
+      <!-- Bottom -->
+      <div class="py-3" style="background-color:#092b21;">
         <div
           class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
           <small>© The-Mind-Garden, All Right Reserved.</small>
           <small>Designed By <a href="#"
-              class="text-success text-decoration-none">MAAD GROUP</a></small>
+              class="text-success text-decoration-none">MAAD
+              GROUP</a></small>
         </div>
       </div>
     </footer>
+    <!-- Footer End -->
 
     <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"></script>
+
+    <script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Stop form from submitting
+
+  // Get form field values
+  const name = document.getElementById("nameInput").value.trim();
+  const email = document.getElementById("emailInput").value.trim();
+  const subject = document.getElementById("subjectInput").value.trim();
+  const message = document.getElementById("messageInput").value.trim();
+
+  // Error message spans
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const subjectError = document.getElementById("subjectError");
+  const messageError = document.getElementById("messageError");
+  const formSuccess = document.getElementById("formSuccess");
+
+  // Reset error messages
+  nameError.textContent = "";
+  emailError.textContent = "";
+  subjectError.textContent = "";
+  messageError.textContent = "";
+  formSuccess.classList.add("d-none");
+
+  let isValid = true;
+
+  // Name Validation
+  if (name === "") {
+    nameError.textContent = "Please enter your name.";
+    isValid = false;
+  } else if (name.length < 3) {
+    nameError.textContent = "Name must be at least 3 characters long.";
+    isValid = false;
+  }
+
+  // Email Validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (email === "") {
+    emailError.textContent = "Please enter your email.";
+    isValid = false;
+  } else if (!emailPattern.test(email)) {
+    emailError.textContent = "Please enter a valid email address.";
+    isValid = false;
+  }
+
+  // Subject Validation
+  if (subject === "") {
+    subjectError.textContent = "Please enter a subject.";
+    isValid = false;
+  } else if (subject.length < 3) {
+    subjectError.textContent = "Subject must be at least 3 characters.";
+    isValid = false;
+  }
+
+  // Message Validation
+  if (message === "") {
+    messageError.textContent = "Please enter your message.";
+    isValid = false;
+  } else if (message.length < 10) {
+    messageError.textContent = "Message must be at least 10 characters long.";
+    isValid = false;
+  }
+
+  // If everything is valid
+  if (isValid) {
+    formSuccess.classList.remove("d-none");
+
+    // Optionally clear the form
+    document.getElementById("contactForm").reset();
+  }
+});
+</script>
+
   </body>
 </html>
