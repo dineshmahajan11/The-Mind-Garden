@@ -377,7 +377,8 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
         <div class="container-fluid">
           <!-- Logo -->
-          <a class="navbar-brand fw-bold fs-1 text-success" href="#">Navbar</a>
+          <a class="navbar-brand fw-bold fs-1 text-success col-md-2"
+            href="index.html"><img src="images/logo-png.png" class="img-fluid" alt=""></a>
 
           <!-- Toggler for mobile -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -1315,17 +1316,19 @@
           </div>
 
           <!-- Bottom -->
-          <div class="py-3" style="background-color:#092b21;">
-            <div
-              class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-              <small>© The-Mind-Garden, All Right Reserved.</small>
-              <small>Designed By <a href="#"
-                  class="text-success text-decoration-none">MAAD
-                  GROUP</a></small>
-            </div>
-          </div>
-        </footer>
-        <!-- Footer End -->
+    <div class="py-3" style="background-color:#092b21;">
+       <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+         <small>© <span id="year"></span> The-Mind-Garden, All Right Reserved.</small>
+           <small>Designed By <a href="#" class="text-success text-decoration-none">MAAD GROUP</a></small>
+       </div>
+   </div>
+ </footer>
+    <!-- Footer End -->
+<!-- Script to insert current year -->
+   <script>
+     const now = new Date();
+       document.getElementById("year").textContent = now.getFullYear();
+   </script>
 
         <!-- Explore More Modal -->
         <div class="modal fade" id="exploreModal" tabindex="-1"
