@@ -310,11 +310,12 @@
       </div>
     </div>
     <!-- Header Start -->
-    <header>
+    <header class="sticky-top bg-light">
       <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
         <div class="container-fluid">
           <!-- Logo -->
-          <a class="navbar-brand fw-bold fs-1 text-success" href="#">Gardner</a>
+          <a class="navbar-brand fw-bold fs-1 text-success col-md-2"
+            href="index.html"><img src="images/logo-png.png" class="img-fluid" 3...alt="LOGO"></a>
 
           <!-- Toggler for mobile -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -328,11 +329,11 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
               <li class="nav-item">
-                <a class="nav-link active fs-5 link-success"
+                <a class="nav-link active fs-5 link-dark link-success-hover"
                   aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
+                <a class="nav-link fs-5 link-success"
                   href="about.html">About</a>
               </li>
               <li class="nav-item">
@@ -405,7 +406,10 @@
         <p class="about-description mb-4">
            Every garden we touch is a reflection of care, calm, and connection. From the soil to the soul, our team nurtures spaces that breathe serenity and bloom with intention. Whether it's a quiet corner or a vibrant landscape, we believe your home deserves the gentle rhythm of nature.
         </p>
-        <a class="btn btn-success py-3 px-4" href="#">Explore More</a>
+        <a class="btn btn-success py-3 px-4" href="#" data-bs-toggle="modal" data-bs-target="#exploreModal">
+  Explore More
+</a>
+
       </div>
       <!-- Right Features -->
       <div class="col-lg-3 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
@@ -533,8 +537,7 @@
                   <a href="#"
                     class="btn btn-outline-light btn-sm rounded-circle"><i
                       class="bi bi-facebook"></i></a>
-                  <a href="#"
-                    class="btn btn-outline-light btn-sm rounded-circle"><i
+                  <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
                       class="bi bi-youtube"></i></a>
                   <a href="#"
                     class="btn btn-outline-light btn-sm rounded-circle"><i
@@ -649,5 +652,48 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous">
     </script>
+
+    <!-- Explore More Modal -->
+<div class="modal fade" id="exploreModal" tabindex="-1" aria-labelledby="exploreModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <!-- Header -->
+      <div class="modal-header" style="background-color:#0b3d2e; color:white;">
+        <h5 class="modal-title" id="exploreModalLabel">More About Us</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>99
+      
+      <!-- Body -->
+      <div class="modal-body">
+        <h4 class="text-success">Our Mission</h4>
+        <p>
+          We believe in creating landscapes that blend nature with living spaces. 
+          Our mission is to bring calmness, serenity, and beauty into your home and community through sustainable gardening practices.
+        </p>
+        <h4 class="text-success mt-3">What We Do</h4>
+        <ul>
+          <li>Customized Garden Designing & Landscaping</li>
+          <li>Eco-friendly Irrigation & Maintenance</li>
+          <li>Urban Gardening & Green Technology</li>
+          <li>Seasonal Plant Care & Pruning</li>
+          <li>Community Gardening Initiatives</li>
+        </ul>
+        <h4 class="text-success mt-3">Why Choose Us?</h4>
+        <p>
+          With over <b>25 years of experience</b>, a passionate team, and award-winning designs, 
+          we transform spaces into gardens that tell a story of harmony, nature, and life.
+        </p>
+      </div>
+      
+      <!-- Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="services.html" class="btn btn-success">View Services</a>
+      </div>
+    </div>
+  </div>
+</div>
+
   </body>
 </html>
