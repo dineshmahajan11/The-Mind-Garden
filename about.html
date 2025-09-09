@@ -20,6 +20,29 @@
       .link-success-hover:hover {
         color: #198754 !important; /* Bootstrap green */
       }
+      /* Logo Styling */
+     .logo {
+      max-width: 300px;
+      height: auto;
+      }
+
+/* Adjust logo size on smaller screens */
+      @media (max-width: 768px) {
+      .logo {
+         max-width: 200px;
+         }
+       }
+
+       @media (max-width: 576px) {
+       .logo {
+           max-width: 150px;
+          }
+       }
+        /* Top Bar */
+      .top-bar {
+        background-color: #0b3d2e;
+      }
+
       .page-header {
       position: relative;
       background: url('images/baner1.jpg') center center/cover no-repeat;
@@ -49,7 +72,6 @@
       /* abt section */
       /* Font & Base */
       body {
-      font-family: 'Poppins', sans-serif;
       background-color: #f9fefb;
       color: #3b4c3f;
      }
@@ -125,7 +147,6 @@
   background-attachment: fixed;
   position: relative;
   color: #fff;
-  font-family: 'Cormorant Garamond', serif;
 }
 
 /* Soft Overlay */
@@ -200,7 +221,7 @@
 /* Team member image */
 .team-img img {
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: cover;
   transition: transform 0.5s ease;
   border-radius: 0;
@@ -267,7 +288,7 @@
 
 .counter-section {
   position: relative;
-  background: url('images/baner2.jpg') center center/cover no-repeat;
+  background: url('images/baner1.jpg') center center/cover no-repeat;
   min-height: 300px;
 }
 
@@ -289,23 +310,22 @@
     </style>
   </head>
   <body>
-    <!-- Top Bar -->
-    <div style="background-color:#0b3d2e;" class="text-white py-3">
+    
+   <!-- Top Bar -->
+    <div class="top-bar text-white py-3">
       <div class="container d-flex justify-content-between align-items-center">
-        <!-- Left side: phone & email -->
         <div>
           <i class="bi bi-telephone me-2"></i> +91 87345 67890
           <span class="ms-4"><i class="bi bi-envelope me-2"></i>
             info@themindgarden.com</span>
         </div>
-
         <!-- Right side: social icons -->
         <div>
           <span class="me-2">Follow Us:</span>
-          <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-white me-3"><i class="bi bi-youtube"></i></a>
-          <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+          <a href="https://twitter.com" target="_blank" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+          <a href="https://facebook.com" target="_blank" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+          <a href="https://youtube.com" target="_blank" class="text-white me-3"><i class="bi bi-youtube"></i></a>
+          <a href="https://instagram.com" target="_blank" class="text-white"><i class="bi bi-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -315,7 +335,7 @@
         <div class="container-fluid">
           <!-- Logo -->
           <a class="navbar-brand fw-bold fs-1 text-success col-md-2"
-            href="index.html"><img src="images/logo-png.png" class="img-fluid" 3...alt="LOGO"></a>
+            href="index.html"><img src="images/logo-png.png" class=" logo img-fluid" 3...alt="LOGO"></a>
 
           <!-- Toggler for mobile -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -329,40 +349,29 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
               <li class="nav-item">
-                <a class="nav-link active fs-5 link-dark link-success-hover"
-                  aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active fs-5 link-dark link-success-hover" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-5 link-success"
-                  href="about.html">About</a>
+                <a class="nav-link fs-5 link-success" href="about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
-                  href="services.html">Services</a>
+                <a class="nav-link fs-5 link-dark link-success-hover" href="services.html">Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
-                  href="projects.html">Projects</a>
+                <a class="nav-link fs-5 link-dark link-success-hover" href="projects.html">Projects</a>
               </li>
               <li class="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle fs-5 link-dark link-success-hover"
-                  href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Pages
-                </a>
+                  class="nav-link dropdown-toggle fs-5 link-dark link-success-hover" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item"
-                      href="features.html">Features</a></li>
+                  <li><a class="dropdown-item" href="features.html">Features</a></li>
                   <li><a class="dropdown-item" href="ourteam.html">Our Team</a></li>
                   <li><a class="dropdown-item" href="feedback.html">Feedback Form</a></li>
-                  <li><a class="dropdown-item"
-                      href="reviews.html">Reviews</a></li>
+                  <li><a class="dropdown-item" href="reviews.html">Reviews</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-5 link-dark link-success-hover"
-                  href="contact.html">Contact</a>
+                <a class="nav-link fs-5 link-dark link-success-hover" href="contact.html">Contact</a>
               </li>
             </ul>
           </div>
@@ -378,12 +387,8 @@
           <h1 class="display-3 text-white mb-4 fw-bold">About</h1>
           <nav aria-label="breadcrumb" class="animated slideInDown">
             <ul class="breadcrumb justify-content-center mb-0">
-              <li class="breadcrumb-item"><a href="#"
-                  class="text-white text-decoration-none">Home</a></li>
-              <li class="breadcrumb-item"><a href="#"
-                  class="text-white text-decoration-none">Pages</a></li>
-              <li class="breadcrumb-item text-white active"
-                aria-current="page">About</li>
+              <li class="breadcrumb-item"><a href="index.html" class="text-white text-decoration-none">Home</a></li>      
+              <li class="breadcrumb-item text-white active" aria-current="page">About</li>
             </ul>
           </nav>
         </div>
@@ -466,15 +471,15 @@
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="team-item rounded">
                 <div class="team-img">
-                    <img src="images/team-1.jpg" alt="Doris Jordan">
+                    <img src="images/broski.jpg" alt="Doris Jordan">
                 </div>
                 <div class="team-text">
                     <h4 class="mb-0">Doris Jordan</h4>
                     <p class="text-primary">Landscape Designer</p>
                     <div class="team-social d-flex justify-content-center">
-                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="https://instagram.com"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -483,15 +488,15 @@
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="team-item rounded">
                 <div class="team-img">
-                    <img src="images/team-2.jpg" alt="Johnny Ramirez">
+                    <img src="images/dinesh.jpg" alt="Johnny Ramirez">
                 </div>
                 <div class="team-text">
                     <h4 class="mb-0">Johnny Ramirez</h4>
                     <p class="text-primary">Garden Designer</p>
                     <div class="team-social d-flex justify-content-center">
-                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="https://instagram.com"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -500,15 +505,15 @@
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
             <div class="team-item rounded">
                 <div class="team-img">
-                    <img src="images/team-3.jpg" alt="Diana Wagner">
+                    <img src="images/shreya.jpg" alt="Diana Wagner">
                 </div>
                 <div class="team-text">
                     <h4 class="mb-0">Diana Wagner</h4>
                     <p class="text-primary">Senior Gardener</p>
                     <div class="team-social d-flex justify-content-center">
-                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square rounded-circle me-2" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square rounded-circle me-2" href="https://instagram.com"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -531,17 +536,10 @@
                 <p><i
                     class="bi bi-envelope me-2"></i>info@themindgarden.com</p>
                 <div class="d-flex gap-2">
-                  <a href="#"
-                    class="btn btn-outline-light btn-sm rounded-circle"><i
-                      class="bi bi-twitter"></i></a>
-                  <a href="#"
-                    class="btn btn-outline-light btn-sm rounded-circle"><i
-                      class="bi bi-facebook"></i></a>
-                  <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
-                      class="bi bi-youtube"></i></a>
-                  <a href="#"
-                    class="btn btn-outline-light btn-sm rounded-circle"><i
-                      class="bi bi-instagram"></i></a>
+                  <a href="https://twitter.com" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
+                  <a href="https://youtube.com" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-youtube"></i></a>
+                  <a href="https://instagram.com" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
                 </div>
               </div>
 
