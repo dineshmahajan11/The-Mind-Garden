@@ -34,6 +34,36 @@
   }
 }
 
+/* Animation: Fade and Slide Up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initially hide text */
+.carousel-caption h1,
+.carousel-caption a {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* When slide is active, play animation */
+.carousel-item.active .carousel-caption h1 {
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.carousel-item.active .carousel-caption a {
+  animation: fadeInUp 1s ease-in-out forwards;
+  animation-delay: 0.5s; /* Button appears slightly later */
+}
+
+
 /* Default styles for larger screens */
   .slider-h {
     font-size: 4rem; 
