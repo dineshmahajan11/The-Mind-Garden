@@ -215,11 +215,17 @@
             <div class="invalid-feedback">Please enter a 10-digit mobile number.</div>
           </div>
           <div class="col-md-6">
-            <input type="text" class="form-control" id="service" placeholder="Service Type" required>
-            <div class="invalid-feedback">Please enter the service type.</div>
+            <!-- <input type="text" class="form-control" id="service" placeholder="Service Type" required> -->
+           <select class="form-select" id="frames" required>
+                <option value="" disabled selected>Select service type</option>
+                <option value="1">Landscaping</option>
+                <option value="2">Pruning Plants</option>
+                <option value="3">Irrigation & Drainage</option>
+                <option value="4">Garden Maintenance</option>
+              </select>        
+
           </div>
         </div>
-
         <div class="mb-3">
           <textarea class="form-control" id="message" rows="4" placeholder="Message" required></textarea>
           <div class="invalid-feedback">Please enter your message.</div>
