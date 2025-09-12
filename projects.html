@@ -203,6 +203,29 @@
   display: block;
 }
 
+/*animation starts*/
+ 
+.page-header h1,
+.page-header nav {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeSlideDown 1s ease-in-out forwards;
+}
+
+.page-header nav {
+  animation-delay: 0.5s; /* Starts after heading animation */
+}
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 
