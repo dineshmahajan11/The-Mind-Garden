@@ -68,7 +68,29 @@
         color: #a5d6a7; /* soft green */
       }
 
+ /*animation starts*/
+ 
+.page-header h1,
+.page-header nav {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeSlideDown 1s ease-in-out forwards;
+}
 
+.page-header nav {
+  animation-delay: 0.5s; /* Starts after heading animation */
+}
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
     </style>
   </head>
   <body>
@@ -193,11 +215,17 @@
             <div class="invalid-feedback">Please enter a 10-digit mobile number.</div>
           </div>
           <div class="col-md-6">
-            <input type="text" class="form-control" id="service" placeholder="Service Type" required>
-            <div class="invalid-feedback">Please enter the service type.</div>
+            <!-- <input type="text" class="form-control" id="service" placeholder="Service Type" required> -->
+           <select class="form-select" id="frames" required>
+                <option value="" disabled selected>Select service type</option>
+                <option value="1">Landscaping</option>
+                <option value="2">Pruning Plants</option>
+                <option value="3">Irrigation & Drainage</option>
+                <option value="4">Garden Maintenance</option>
+              </select>        
+
           </div>
         </div>
-
         <div class="mb-3">
           <textarea class="form-control" id="message" rows="4" placeholder="Message" required></textarea>
           <div class="invalid-feedback">Please enter your message.</div>
@@ -254,11 +282,11 @@
                 <p><i
                     class="bi bi-envelope me-2"></i>info@themindgarden.com</p>
                 <div class="d-flex gap-2">
-                  <a href="https://twitter.com" target="_blank" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-                  <a href="https://facebook.com" target="_blank" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-                  <a href="https://youtube.com" target="_blank" class="text-white me-3"><i class="bi bi-youtube"></i></a>
-                  <a href="https://instagram.com" target="_blank" class="text-white"><i class="bi bi-instagram"></i></a>
-               </div>
+                  <a href="https://twitter.com" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
+                  <a href="https://youtube.com" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-youtube"></i></a>
+                  <a href="https://instagram.com" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
+                </div>
               </div>
 
               <!-- Services -->
